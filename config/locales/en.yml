@@ -82,10 +82,10 @@ en:
   generic:
     changes_saved_msg: Your modifications took!
     powered_by: run by %{link}
-    save_changes: Affirm modifications
+    save_changes: Confirm modifications
     validation_errors:
-        one: Oops, that's not right! Look at this:
-        other: Oops, that's not right! Look at this:
+        one: "Oops, that's not right! Look at this:"
+        other: "Oops, that's not right! Look at this:"
   imports:
     preface: You can import many kinds of data, such as all accounts you follow or block into your account on this instantiation, from data built by a download from any instantiation.
     success: Your data is on our instantiation and is now loading

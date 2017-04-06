@@ -14,7 +14,7 @@ import ClearColumnButton from './components/clear_column_button';
 
 const messages = defineMessages({
   title: { id: 'column.notifications', defaultMessage: 'Notifications' },
-  confirm: { id: 'notifications.clear_confirmation', defaultMessage: 'Are you sure you want to clear all your notifications?' }
+  confirm: { id: 'notifications.clear_confirmation', defaultMessage: 'Do you want to trash all your notifications?' }
 });
 
 const getNotifications = createSelector([
@@ -111,7 +111,7 @@ const Notifications = React.createClass({
     } else {
       scrollableArea = (
         <div className='empty-column-indicator' ref={this.setRef}>
-          <FormattedMessage id='empty_column.notifications' defaultMessage="You don't have any notifications yet. Interact with others to start the conversation." />
+          <FormattedMessage id='empty_column.notifications' defaultMessage="No notifications right now. Talk with various account to start a dialog." />
         </div>
       );
     }

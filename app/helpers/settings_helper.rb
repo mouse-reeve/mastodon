@@ -2,15 +2,9 @@
 
 module SettingsHelper
   HUMAN_LOCALES = {
-    en: 'English',
-    de: 'Deutsch',
-    es: 'Español',
-    pt: 'Português',
-    fr: 'Français',
-    hu: 'Magyar',
+    en: 'Oulipo',
     uk: 'Українська',
     'zh-CN': '简体中文',
-    fi: 'Suomi',
   }.freeze
 
   def human_locale(locale)

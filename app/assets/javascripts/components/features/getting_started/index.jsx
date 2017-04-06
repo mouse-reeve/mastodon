@@ -6,15 +6,15 @@ import { connect } from 'react-redux';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
 const messages = defineMessages({
-  heading: { id: 'getting_started.heading', defaultMessage: 'Getting started' },
-  public_timeline: { id: 'navigation_bar.public_timeline', defaultMessage: 'Whole Known Network' },
-  community_timeline: { id: 'navigation_bar.community_timeline', defaultMessage: 'Local timeline' },
+  heading: { id: 'getting_started.heading', defaultMessage: 'Start' },
+  public_timeline: { id: 'navigation_bar.public_timeline', defaultMessage: 'All Known Activity' },
+  community_timeline: { id: 'navigation_bar.community_timeline', defaultMessage: 'Local activity' },
   preferences: { id: 'navigation_bar.preferences', defaultMessage: 'Preferences' },
-  follow_requests: { id: 'navigation_bar.follow_requests', defaultMessage: 'Follow requests' },
+  follow_requests: { id: 'navigation_bar.follow_requests', defaultMessage: 'Accounts Wanting to Follow' },
   sign_out: { id: 'navigation_bar.logout', defaultMessage: 'Sign out' },
-  favourites: { id: 'navigation_bar.favourites', defaultMessage: 'Favourites' },
-  blocks: { id: 'navigation_bar.blocks', defaultMessage: 'Blocked users' },
-  info: { id: 'navigation_bar.info', defaultMessage: 'Extended information' }
+  favourites: { id: 'navigation_bar.favourites', defaultMessage: 'Stars' },
+  blocks: { id: 'navigation_bar.blocks', defaultMessage: 'Block List' },
+  info: { id: 'navigation_bar.info', defaultMessage: 'Additional information' }
 });
 
 const mapStateToProps = state => ({
@@ -43,7 +43,7 @@ const GettingStarted = ({ intl, me }) => {
 
       <div className='scrollable optionally-scrollable' style={{ display: 'flex', flexDirection: 'column' }}>
         <div className='static-content getting-started'>
-          <p><FormattedMessage id='getting_started.open_source_notice' defaultMessage='Mastodon is open source software. You can contribute or report issues on GitHub at {github}. {apps}.' values={{ github: <a href="https://github.com/tootsuite/mastodon" target="_blank">tootsuite/mastodon</a>, apps: <a href="https://github.com/tootsuite/mastodon/blob/master/docs/Using-Mastodon/Apps.md" target="_blank"><FormattedMessage id='getting_started.apps' defaultMessage='Various apps are available' /></a> }} /></p>
+          <p><FormattedMessage id='getting_started.open_source_notice' defaultMessage='Mastodon is open source software. You can contribute or report issues on GitHub at {github}. {apps}.' values={{ github: <a href="https://github.com/tootsuite/mastodon" target="_blank">tootsuite/mastodon</a>, apps: <a href="https://github.com/tootsuite/mastodon/blob/master/docs/Using-Mastodon/Apps.md" target="_blank"><FormattedMessage id='getting_started.apps' defaultMessage='You can find various apps to try' /></a> }} /></p>
         </div>
       </div>
     </Column>

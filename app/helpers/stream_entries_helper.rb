@@ -23,7 +23,7 @@ module StreamEntriesHelper
   end
 
   def relative_time(date)
-    date < 5.days.ago ? date.strftime('%d.%m.%Y') : "#{time_ago_in_words(date)} ago"
+    date.strftime('%d.%m.%Y')
   end
 
   def reblogged_by_me_class(status)
