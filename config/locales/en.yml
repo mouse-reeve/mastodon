@@ -4,9 +4,9 @@ en:
     about_mastodon: Mastodon is a <em>"FOSS"</em> social sharing hub. A <em>multi-host</em> substition for capitalistic platforms, it avoids risks of a particular company monopolizing your communication. Pick a host that you trust &mdash; you can still talk with all hosts running Mastadon. Any individual can run a Mastodon instantiation and join in this <em>social hub</em> in a jiffy.
     about_this: About this instantiation
     apps: Apps
-    business_email: 'Contact mail:'
-    contact: Contact
+    business_email: 'Contact:'
     closed_registrations: Right now, nobody may join this instantiation.
+    contact: Contact
     description_headline: What is %{domain}?
     domain_count_after: instantiations
     domain_count_before: Links found to
