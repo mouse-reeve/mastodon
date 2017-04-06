@@ -1,8 +1,8 @@
 # config/app.yml for rails-settings-cached
 defaults: &defaults
   site_title: 'Oulipostodon'
-  site_description: 'Dcntralizd and Fdratd Mastodon'
-  site_extended_description: "Look to <a href='https://mastodon.social/about/more'>Mastodon.social</a> for social protocols, and additionally, in this Mastodon instantiation, that fifth symbol in Latin script is taboo."
+  site_description: 'A Dcntralizd and Fdratd Social Ntwork'
+  site_extended_description: "Look to <a href='https://mastodon.social/about/more'>Mastodon.social</a> for social protocols, and additionally, in this Mastodon instantiation, that fifth symbol in Latin script is taboo. Using '3' or similar glyphs as substitions for that symbol is grounds for banning from this instantiation."
   site_contact_username: 'mus'
   site_contact_email: 'mousereeve@riseup.net'
   open_registrations: true

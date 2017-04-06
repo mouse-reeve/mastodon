@@ -6,7 +6,7 @@ import SettingToggle from '../../notifications/components/setting_toggle';
 import SettingText from './setting_text';
 
 const messages = defineMessages({
-  filter_regex: { id: 'home.column_settings.filter_regex', defaultMessage: 'Filter out by regular expressions' }
+  filter_regex: { id: 'home.column_settings.filter_regex', defaultMessage: 'Filter out by rgxps' }
 });
 
 const outerStyle = {
@@ -48,10 +48,10 @@ const ColumnSettings = React.createClass({
           </div>
 
           <div style={rowStyle}>
-            <SettingToggle settings={settings} settingKey={['shows', 'reply']} onChange={onChange} label={<FormattedMessage id='home.column_settings.show_replies' defaultMessage='Show replies' />} />
+            <SettingToggle settings={settings} settingKey={['shows', 'reply']} onChange={onChange} label={<FormattedMessage id='home.column_settings.show_replies' defaultMessage='Show discussions' />} />
           </div>
 
-          <span className='column-settings--section' style={sectionStyle}><FormattedMessage id='home.column_settings.advanced' defaultMessage='Advanced' /></span>
+          <span className='column-settings--section' style={sectionStyle}><FormattedMessage id='home.column_settings.advanced' defaultMessage='Additional options' /></span>
 
           <div style={rowStyle}>
             <SettingText settings={settings} settingKey={['regex', 'body']} onChange={onChange} label={intl.formatMessage(messages.filter_regex)} />

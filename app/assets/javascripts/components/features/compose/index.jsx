@@ -11,10 +11,10 @@ import { Motion, spring } from 'react-motion';
 import SearchResultsContainer from './containers/search_results_container';
 
 const messages = defineMessages({
-  start: { id: 'getting_started.heading', defaultMessage: 'Getting started' },
-  public: { id: 'navigation_bar.public_timeline', defaultMessage: 'Whole Known Network' },
-  community: { id: 'navigation_bar.community_timeline', defaultMessage: 'Local timeline' },
-  preferences: { id: 'navigation_bar.preferences', defaultMessage: 'Preferences' },
+  start: { id: 'getting_started.heading', defaultMessage: 'Starting out' },
+  public: { id: 'navigation_bar.public_timeline', defaultMessage: 'Global Activity' },
+  community: { id: 'navigation_bar.community_timeline', defaultMessage: 'Community activity' },
+  preferences: { id: 'navigation_bar.preferences', defaultMessage: 'Options' },
   logout: { id: 'navigation_bar.logout', defaultMessage: 'Logout' }
 });
 
