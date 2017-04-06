@@ -1,7 +1,7 @@
 .status.light
   .status__header
     .status__meta
-      = link_to time_ago_in_words(status.created_at), TagManager.instance.url_for(status), class: 'status__relative-time u-url u-uid', title: l(status.created_at), target: @external_links ? '_blank' : nil, rel: 'noopener'
+      = link_to l(status.created_at), TagManager.instance.url_for(status), class: 'status__relative-time u-url u-uid', title: l(status.created_at), target: @external_links ? '_blank' : nil, rel: 'noopener'
       %data.dt-published{ value: status.created_at.to_time.iso8601 }
 
     = link_to TagManager.instance.url_for(status.account), class: 'status__display-name p-author h-card', target: @external_links ? '_blank' : nil, rel: 'noopener' do
