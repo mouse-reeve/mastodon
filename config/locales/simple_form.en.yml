@@ -7,7 +7,7 @@ en:
         display_name: At most 30 symbols
 
         header: PNG, GIF or JPG. At most 2MB. Will automatically shift down to 700x335px
-        locked: You must manually allow follows and post privacy to accounts-who-follow-you-only is standard
+        locked: You must manually allow follows and post privacy to accounts who follow you only is standard
         note: At most 160 symbols
       imports:
         data: CSV download from a Mastodon instantiation

@@ -6,7 +6,7 @@ import { defineMessages, injectIntl, FormattedMessage, FormattedNumber } from 'r
 
 const messages = defineMessages({
   mention: { id: 'account.mention', defaultMessage: 'Tag @{name}' },
-  edit_profile: { id: 'account.edit_profile', defaultMessage: 'Modify profile' },
+  edit_profile: { id: 'account.edit_profile', defaultMessage: 'Modify bio' },
   unblock: { id: 'account.unblock', defaultMessage: 'Unblock @{name}' },
   unfollow: { id: 'account.unfollow', defaultMessage: 'Unfollow' },
   unmute: { id: 'account.unmute', defaultMessage: 'Show @{name}' },

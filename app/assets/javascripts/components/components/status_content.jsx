@@ -108,7 +108,7 @@ const StatusContent = React.createClass({
         </Permalink>
       )).reduce((aggregate, item) => [...aggregate, item, ' '], [])
 
-      const toggleText = hidden ? <FormattedMessage id='status.show_more' defaultMessage='Show more' /> : <FormattedMessage id='status.show_less' defaultMessage='Show less' />;
+      const toggleText = hidden ? <FormattedMessage id='status.show_more' defaultMessage='Show full' /> : <FormattedMessage id='status.show_less' defaultMessage='Show partial' />;
 
       if (hidden) {
         mentionsPlaceholder = <div>{mentionLinks}</div>;

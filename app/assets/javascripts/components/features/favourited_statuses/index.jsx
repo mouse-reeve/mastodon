@@ -9,7 +9,7 @@ import ColumnBackButtonSlim from '../../components/column_back_button_slim';
 import { defineMessages, injectIntl } from 'react-intl';
 
 const messages = defineMessages({
-  heading: { id: 'column.favourites', defaultMessage: 'Favourites' }
+  heading: { id: 'column.favourites', defaultMessage: 'Stars' }
 });
 
 const mapStateToProps = state => ({
