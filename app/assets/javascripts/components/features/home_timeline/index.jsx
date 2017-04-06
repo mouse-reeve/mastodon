@@ -7,7 +7,7 @@ import ColumnSettingsContainer from './containers/column_settings_container';
 import { Link } from 'react-router';
 
 const messages = defineMessages({
-  title: { id: 'column.home', defaultMessage: 'Home' }
+  title: { id: 'column.home', defaultMessage: 'Origin' }
 });
 
 const mapStateToProps = state => ({

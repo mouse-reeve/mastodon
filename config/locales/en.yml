@@ -1,7 +1,7 @@
 ---
 en:
   about:
-      about_mastodon: Mastodon is a <em>"FOSS"</em> social sharing hub. A <em>multi-host</em> substition for capitalistic platforms, it avoids risks of a particular company monopolizing your communication. Pick a host that you trust &mdash; you can still talk with all hosts running Mastadon. Any individual can run a Mastodon instantiation and join in this <em>social hub</em> in a jiffy.
+    about_mastodon: Mastodon is a <em>"FOSS"</em> social sharing hub. A <em>multi-host</em> substition for capitalistic platforms, it avoids risks of a particular company monopolizing your communication. Pick a host that you trust &mdash; you can still talk with all hosts running Mastadon. Any individual can run a Mastodon instantiation and join in this <em>social hub</em> in a jiffy.
     about_this: About this instantiation
     apps: Apps
     business_email: 'Contact mail:'
