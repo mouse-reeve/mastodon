@@ -8,7 +8,7 @@ const en = {
   "status.reblog": "Boost",
   "status.favourite": "Star",
   "status.reblogged_by": "{name} boosts",
-  "status.sensitive_warning": "Touchy thing",
+  "status.sensitive_warning": "Touchy",
   "status.sensitive_toggle": "Click to look",
   "video_player.toggle_sound": "Switch sound",
   "account.mention": "Tag @{name}",
