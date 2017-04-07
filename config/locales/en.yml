@@ -11,7 +11,7 @@ en:
     domain_count_after: instantiations
     domain_count_before: Links found to
     features:
-      api: Open API for apps and tools
+      api: API for apps and tools
       blocks: Rich block and muting tools
       characters: 500 symbols in any post, without that fifth symbol in Latin writing
       chronology: Activity is chronological
@@ -147,7 +147,7 @@ en:
   stream_entries:
     click_to_show: Click to show
     reblogged: boost is in
-    sensitive_content: Touchy
+    sensitive_content: Tricky
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
