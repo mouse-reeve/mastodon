@@ -2,7 +2,51 @@
 defaults: &defaults
   site_title: 'Oulipostodon'
   site_description: 'A Dcntralizd and Fdratd Social Ntwork'
-  site_extended_description: "Look to <a href='https://mastodon.social/about/more'>Mastodon.social</a> for social protocols, and additionally, in this Mastodon instantiation, that fifth symbol in Latin script is taboo. Using '3' or similar glyphs as substitions for that symbol is grounds for banning from this instantiation."
+  site_extended_description: |
+    <p>Oulipo.social is a lipogrammatic Mastodon for all. This social contract is an adaptation from <a href="https://mastodon.social/about/more">Mastadon.social</a>.</p>
+    <p>What follows is not a law contract, and final ruling is up to administratos of oulipo.social; it should function to clarify our community policy and standards:</p>
+
+    <ol>
+      <li>
+        Posts similar to any of this will not stay up on our activity list:
+        <ol type="a">
+          <li>Abundant ads</li>
+          <li>Bots that post spam</li>
+          <li>Pornography without a "CW" or "Tricky Topic" tag</li>
+          <li>Horrific or traumatic posts without a "CW" or "Tricky Topic" tag</li>
+          <li>That fifth symbol, or any variant of it, that is found in Latin script, including using "3" or homographic symbols in its spot.</li>
+        </ol>
+      </li>
+
+      <li>
+        Posts similar to any of this will not stay up on our activity list, and is possibly grounds for banning:
+        <ol type="a">
+          <li>Racism or advocation of racism</li>
+          <li>Misogyny or advocation of misogyny</li>
+          <li>Discrimination against LGBT minority groups or individuals, or advocation of that</li>
+          <li>Jingoism or militant nationalism</li>
+        </ol>
+      </li>
+
+      <li>
+        Posts similar to any of this will not stay up and is without doubt grounds for banning:
+        <ol type="a">
+          <li>Child pornography</li>
+          <li>Nazism of any kind or any promoting of National Socialism</li>
+        </ol>
+      </li>
+
+      <li>
+        Any conduct which could stalk or harass participants or individuals, or stop individuals from participating in this community, or to impact usability and functionality of this community, or to harass anybody, or advocations that accounts do such actions, is not okay, and is grounds for banning any violators. This is activity such as:
+        <ol type="a">
+          <li>Continuing to talk to an individual that has said to stop, a platform's privacy tools notwithstanding.</li>
+          <li>Posting, and/or sharing an individual's data or information without that individual's approval (informally known as doxing or dropping dox).</li>
+          <li>Inciting accounts to post to an individual in additional discussion if that individual has said it should stop (informally known brigading or dogpiling).</li>
+        </ol>
+      </li>
+    </ol>
+
+    <p>All this notwithstanding, administrators of oulipo.social can ban any accounts, at any point, for any motivation, if not in violation of law.</p>
   site_contact_username: 'mus'
   site_contact_email: 'mousereeve@riseup.net'
   open_registrations: true
