@@ -14,8 +14,8 @@ class PostStatusService < BaseService
   # @return [Status]
   def call(account, text, in_reply_to = nil, options = {})
     media  = validate_media!(options[:media_ids])
-    raise Mastodon::ValidationError, 'Invalid symbol' if text.include? 'e'
-    raise Mastodon::ValidationError, 'Invalid symbol' if options[:spoiler_text].include? 'e'
+    raise Mastodon::ValidationError, 'Invalid symbol' if text.downcase.include? 'e'
+    raise Mastodon::ValidationError, 'Invalid symbol' if options[:spoiler_text].downcase.include? 'e'
     status = account.statuses.create!(text: text,
                                       thread: in_reply_to,
                                       sensitive: options[:sensitive],
