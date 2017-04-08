@@ -4,7 +4,7 @@ defaults: &defaults
   site_description: 'A Dcntralizd and Fdratd Social Ntwork'
   site_extended_description: |
     <p>Oulipo.social is a lipogrammatic Mastodon for all. This social contract is an adaptation from <a href="https://mastodon.social/about/more">Mastadon.social</a>.</p>
-    <p>What follows is not a law contract, and final ruling is up to administratos of oulipo.social; it should function to clarify our community policy and standards:</p>
+    <p>What follows is not a law contract, and final ruling is up to administrators of oulipo.social; it should function to clarify our community policy and standards:</p>
 
     <ol>
       <li>
