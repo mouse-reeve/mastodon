@@ -24,9 +24,9 @@ class Account < ApplicationRecord
 
   # Local user profile validations
   validates :display_name, length: { maximum: 30 }, if: 'local?'
-  #validates :display_name, format: { with: /\A[^e]+\z/, message: "not that fifth symbol" }
+  validates :display_name, format: { with: /\A[^e]+\z/, message: "not that fifth symbol" }, if: 'local?'
   validates :note, length: { maximum: 160 }, if: 'local?'
-  #validates :note, format: { with: /\A[^e]+\z|\A\z/, message: "not that fifth symbol" }
+  validates :note, format: { with: /\A[^e]+\z|\A\z/, message: "not that fifth symbol" }, if: 'local?'
 
   # Timelines
   has_many :stream_entries, inverse_of: :account, dependent: :destroy
