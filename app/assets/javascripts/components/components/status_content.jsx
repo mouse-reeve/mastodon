@@ -2,6 +2,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import escapeTextContentForBrowser from 'escape-html';
 import emojify from '../emoji';
+import oulipoify from '../oulipo';
 import { isRtl } from '../rtl';
 import { FormattedMessage } from 'react-intl';
 import Permalink from './permalink';
@@ -91,7 +92,7 @@ const StatusContent = React.createClass({
     const { status } = this.props;
     const { hidden } = this.state;
 
-    const content = { __html: emojify(status.get('content')) };
+    const content = { __html: oulipoify(emojify(status.get('content'))) };
     const spoilerContent = { __html: emojify(escapeTextContentForBrowser(status.get('spoiler_text', ''))) };
     const directionStyle = { direction: 'ltr' };
 
