@@ -82,7 +82,7 @@ en:
   generic:
     changes_saved_msg: Your modifications took!
     powered_by: run by %{link}
-    save_changes: Confirm modifications
+    save_changes: Confirm
     validation_errors:
         one: "Oops, that's not right! Look at this:"
         other: "Oops, that's not right! Look at this:"
