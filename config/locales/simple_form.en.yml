@@ -20,7 +20,7 @@ en:
         data: Data
         display_name: Display alias
         email: Mail
-        header: Backaground photo
+        header: Background photo
         locale: Localization
         locked: Lock account
         new_password: Adjust password
@@ -43,5 +43,5 @@ en:
     'no': 'No'
     required:
       mark: "*"
-      text: madatory
+      text: mandatory
     'yes': 'Okay'
