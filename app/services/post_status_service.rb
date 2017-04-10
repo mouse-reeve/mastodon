@@ -15,6 +15,7 @@ class PostStatusService < BaseService
   def call(account, text, in_reply_to = nil, options = {})
     media  = validate_media!(options[:media_ids])
     text_without_urls= text.gsub(/http.?:\/\/[^\s\\]+/, '')
+    text_without_urls= text_without_urls.gsub(/@[^\s\\]+@[^\s\\]+\.[a-z]+/, '')
     raise Mastodon::ValidationError, 'Invalid symbol' if text_without_urls.downcase.include? 'e'
     raise Mastodon::ValidationError, 'Invalid symbol' if options[:spoiler_text].downcase.include? 'e'
     status = account.statuses.create!(text: text,
