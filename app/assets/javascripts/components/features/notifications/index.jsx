@@ -111,7 +111,7 @@ const Notifications = React.createClass({
     } else {
       scrollableArea = (
         <div className='empty-column-indicator' ref={this.setRef}>
-          <FormattedMessage id='empty_column.notifications' defaultMessage="No notifications right now. Talk with various account to start a dialog." />
+          <FormattedMessage id='empty_column.notifications' defaultMessage="No notifications right now. Talk with accounts to start a dialog." />
         </div>
       );
     }

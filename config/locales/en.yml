@@ -11,7 +11,7 @@ en:
     domain_count_after: instantiations
     domain_count_before: Links found to
     features:
-      api: Open API for apps and tools
+      api: API for apps and tools
       blocks: Rich block and muting tools
       characters: 500 symbols in any post, without that fifth symbol in Latin writing
       chronology: Activity is chronological
@@ -52,7 +52,7 @@ en:
     login: Log in
     logout: Logout
     register: Sign up
-    resend_confirmation: Try disptaching confirmation instructions again
+    resend_confirmation: Dispatch confirmation
     reset_password: Forgot password
     set_new_password: Pick a password
   authorize_follow:
@@ -82,7 +82,7 @@ en:
   generic:
     changes_saved_msg: Your modifications took!
     powered_by: run by %{link}
-    save_changes: Confirm modifications
+    save_changes: Confirm
     validation_errors:
         one: "Oops, that's not right! Look at this:"
         other: "Oops, that's not right! Look at this:"
@@ -147,7 +147,7 @@ en:
   stream_entries:
     click_to_show: Click to show
     reblogged: boost is in
-    sensitive_content: Touchy
+    sensitive_content: Tricky
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
