@@ -1,5 +1,6 @@
-[Issue text goes here].
+[words go here].
 
 * * * *
 
-- [ ] I searched or browsed the repo’s other issues to ensure this is not a duplicate.
+- [ ] I did look at many repos for dups. 
+- [ ] I did shun a taboo fifth glyph.
