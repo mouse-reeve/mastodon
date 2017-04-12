@@ -43,5 +43,5 @@ en:
     'no': 'No'
     required:
       mark: "*"
-      text: madatory
+      text: mandatory
     'yes': 'Okay'
