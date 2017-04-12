@@ -76,6 +76,7 @@ en:
       x_seconds: "%{count}s"
   exports:
     blocks: You block
+    mutes: You mute
     csv: CSV
     follows: You follow
     storage: Data
@@ -92,8 +93,13 @@ en:
     types:
       blocking: Blocking list
       following: Following list
+      muting: Muting list
     upload: Upload
   landing_strip_html: <strong>%{name}</strong> is on <strong>%{domain}</strong>. You can follow or talk with this account if you own an account on any instantiation. If you don't, you can <a href="%{sign_up_path}">sign up</a>.
+  media_attachments:
+    validations:
+      images_and_video: Cannot attach a vid to a status that contains photos
+      too_many: You may only attach up to 4 things
   notification_mailer:
     digest:
       body: 'This is a summary of activity you did not catch on %{instance} following your last visit on %{since}:'
@@ -122,6 +128,7 @@ en:
   pagination:
     next: Forward
     prev: Prev
+    truncate: "&hellip;"
   remote_follow:
     acct: Add your alias@domain you want to follow from
     missing_resource: Could not find mandatory URL for your account
@@ -152,14 +159,68 @@ en:
     formats:
       default: "%b %d, %Y, %H:%M"
   two_factor_auth:
-    description_html: If you allow <strong>two-factor login</strong>, a string of digits will go to you via sms, which you will add to your login form.
+<<<<<<< HEAD
+    code_hint: Submit digits that your auth app displays to confirm
+    description_html: If you allow <strong>two-factor login</strong>, a string of digits will go to you via sms or an auth app, which you will add to your login form.
     disable: Disallow
     enable: Allow
+    enabled_success: Your two-factor login took!
     instructions_html: "<strong>Scan this QR visual into an app</strong>. From now on, that app will know your string of digits for login."
-    plaintext_secret_html: 'Plain string: <samp>%{secret}</samp>'
+    manual_instructions: 'If you can''t scan this QR visual and must add it manually, this is a plain string of it:'
+    setup: Start up
     warning: If you cannot scan with an app right now, you should click "disallow" or your login won't work.
+    wrong_code: You put in an invalid auth string. Is your clock working?
   users:
     invalid_email: That mail is invalid
     invalid_otp_token: Invalid two-factor digits
   will_paginate:
     page_gap: "&hellip;"
+  errors:
+      404: Sorry, not found!
+      410: This spot isn't a spot now.
+      422:
+        title: Validation didn't work
+        content: Validation didn't work. Is your configuration blocking us from storing browsing data?
+  reports:
+    reports: Flags
+    status: Status
+    unresolved: Ongoing
+    resolved: Fixt
+    id: ID
+    target: Account
+    reported_by: Flag by
+    comment:
+      label: Annotations
+      none: Nothing
+    view: Look
+    report: "Flag #%{id}"
+    delete: Discard
+    reported_account: Account with flag
+    reported_by: Flag by
+    silence_account: Turn off sound for account
+    suspend_account: Ban account
+    mark_as_resolved: Mark as fixt
+  admin:
+    settings:
+      title: Instantiation config
+      setting: Config
+      click_to_edit: Click to modify
+      contact_information:
+        label: Contact information
+        username: Put in an alias
+        email: Put in a public mail location
+      site_title: Instantiation titling
+      site_description:
+        title: Instantiation alias
+        desc_html: "Shown as a paragraph on this instantiation's landing and as a meta tag.<br>HTML tags work, in particular <code>&lt;a&gt;</code> and <code>&lt;em&gt;</code>."
+      site_description_extended:
+        title: Full instatiation info
+        desc_html: "Shown on information spot<br>HTML tags will work"
+      registrations:
+        open:
+          title: Allows signup
+          enabled: Allow
+          disabled: Disallow
+        closed_message:
+          title: Lock signup notification
+          desc_html: "Shown on front if you disallow signup<br>HTML tags will work"

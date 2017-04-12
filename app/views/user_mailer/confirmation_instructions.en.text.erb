@@ -1,5 +1,12 @@
-Welcome <%= @resource.email %>!
+Welcome <%= @resource.email %> !
 
-You can confirm your Mastodon account mail through this link:
+You just got an account on <%= @instance %>.
 
+To confirm your inscription, click on this following link :
 <%= confirmation_url(@resource, confirmation_token: @token) %>
+
+Additionally, look at our social contract <%= terms_url %>
+
+Thanks,
+
+<%= @instance %>

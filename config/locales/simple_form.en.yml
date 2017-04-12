@@ -30,6 +30,7 @@ en:
         setting_default_privacy: Post privacy
         type: Import format
         username: Alias
+        setting_boost_modal: Show confirmation dialog prior to boosting
       interactions:
         must_be_follower: Block notifications from accounts that don't follow you
         must_be_following: Block notifications from accounts you don't follow

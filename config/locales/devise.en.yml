@@ -17,7 +17,7 @@ en:
       unconfirmed: Confirm your mail location to go on.
     mailer:
       confirmation_instructions:
-        subject: 'Mastodon: Confirmation instructions'
+        subject: 'Mastodon: Confirmation instructions for %{instance}'
       password_change:
         subject: 'Mastodon: Password modification'
       reset_password_instructions:
@@ -28,11 +28,11 @@ en:
       failure: Could not log you in from %{kind}, as "%{reason}".
       success: Login from %{kind} account took.
     passwords:
-      no_token: You can't look at this spot without coming from a password modification mail. If you did, was it a full url?
+      no_token: You can't look at this spot without coming from a password modification mail. If you did, was it a full URL?
       send_instructions: You will find a mail with instructions on how to modify your password in a jiffy.
       send_paranoid_instructions: If your mail location is known to us, you will find a password modification link at your mail locaton in a jiffy.
-      updated: Your password has modification took and you got through login.
-      updated_not_active: Your password has modification took.
+      updated: Your password modification took and you got through login.
+      updated_not_active: Your password modification took.
     registrations:
       destroyed: Your account has been successfully cancelled. We hope to see you again soon.
       signed_up: Welcome! You have signed up successfully.

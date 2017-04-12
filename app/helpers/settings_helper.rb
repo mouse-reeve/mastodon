@@ -3,8 +3,19 @@
 module SettingsHelper
   HUMAN_LOCALES = {
     en: 'Oulipo',
+    de: 'Deutsch',
+    es: 'Español',
+    eo: 'Esperanto',
+    fr: 'Français',
+    hu: 'Magyar',
+    no: 'Norsk',
+    pt: 'Português',
+    fi: 'Suomi',
+    ru: 'Русский',
     uk: 'Українська',
+    ja: '日本語',
     'zh-CN': '简体中文',
+    'zh-HK': '繁體中文（香港）',
   }.freeze
 
   def human_locale(locale)
