@@ -56,7 +56,7 @@ en:
     reset_password: Forgot password
     set_new_password: Pick a password
   authorize_follow:
-    error: Sory, this account was not found
+    error: Sorry, this account was not found
     follow: Follow
     prompt_html: 'You (<strong>%{self}</strong>) want to follow:'
     title: Follow %{acct}
@@ -76,7 +76,7 @@ en:
       x_seconds: "%{count}s"
   exports:
     blocks: You block
-    mutes: You mute
+    mutes: You don't show
     csv: CSV
     follows: You follow
     storage: Data
@@ -153,13 +153,12 @@ en:
       unlisted: Public, but will not display in a public activity list
   stream_entries:
     click_to_show: Click to show
-    reblogged: boost is in
+    reblogged: boosts
     sensitive_content: Tricky
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
   two_factor_auth:
-<<<<<<< HEAD
     code_hint: Submit digits that your auth app displays to confirm
     description_html: If you allow <strong>two-factor login</strong>, a string of digits will go to you via sms or an auth app, which you will add to your login form.
     disable: Disallow
