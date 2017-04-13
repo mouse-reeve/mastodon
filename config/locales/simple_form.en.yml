@@ -23,7 +23,7 @@ en:
         header: Background photo
         locale: Localization
         locked: Lock account
-        new_password: Adjust password
+        new_password: Modify password
         note: Bio
         otp_attempt: Two-factor digits
         password: Password
