@@ -4,7 +4,7 @@ require 'nokogiri'
 
 class Oulipo::Formatter < Formatter
 
-  FIFTH_GLYPH_REGEX = /[eèéêëēėę3ǝɛ]/i
+  FIFTH_GLYPH_REGEX = /[eèéêëēėęǝɛ]/i
 
   def format(status)
     html = super
