@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe Oulipo::Formatter do
+RSpec.describe Oulipo::StatusFormatter do
 
   let(:account)       { Fabricate(:account, username: 'al') }
-  let(:simple_status)  { Fabricate(:status, text: 'Mice èat chéêsë!', account: account) }
-  let(:link_status)  { Fabricate(:status, text: 'Lovē this Excėllęnt sitǝ: https://example.com', account: account) }
-  let(:mention_status)  { Fabricate(:status, text: 'Hɛy @ecmendenhall@party.personal.pizza', account: account) }
+  let(:simple_status)  { Fabricate.build(:status, text: 'Mice èat chéêsë!', account: account) }
+  let(:link_status)  { Fabricate.build(:status, text: 'Lovē this Excėllęnt sitǝ: https://example.com', account: account) }
+  let(:mention_status)  { Fabricate.build(:status, text: 'Hɛy @ecmendenhall@party.personal.pizza', account: account) }
   let(:remote_status) { Fabricate(:status, text: '<script>alert("Hello")</script> Beep boop', uri: 'beepboop', account: account) }
 
   describe '#format' do
     describe 'simple statuses' do
-      subject { Oulipo::Formatter.instance.format(simple_status) }
+      subject { Oulipo::StatusFormatter.instance.format(simple_status) }
 
       it 'blocks that fifth glyph' do
         expect(subject).to match(
@@ -20,7 +20,7 @@ RSpec.describe Oulipo::Formatter do
     end
 
     describe 'statuses with links' do
-      subject { Oulipo::Formatter.instance.format(link_status) }
+      subject { Oulipo::StatusFormatter.instance.format(link_status) }
 
       it 'blocks that fifth glyph' do
         expect(subject).to match(
@@ -30,7 +30,7 @@ RSpec.describe Oulipo::Formatter do
     end
 
     describe 'statuses with mentions' do
-      subject { Oulipo::Formatter.instance.format(mention_status) }
+      subject { Oulipo::StatusFormatter.instance.format(mention_status) }
 
       it 'blocks that fifth glyph' do
         expect(subject).to match(
@@ -41,7 +41,7 @@ RSpec.describe Oulipo::Formatter do
   end
 
   describe '#reformat' do
-    subject { Oulipo::Formatter.instance.format(remote_status) }
+    subject { Oulipo::StatusFormatter.instance.format(remote_status) }
 
     it 'returns a string' do
       expect(subject).to be_a String
