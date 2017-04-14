@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Formatter do
-  let(:account)       { Fabricate(:account, username: 'alice') }
+  let(:account)       { Fabricate(:account, username: 'mus') }
   let(:local_status)  { Fabricate(:status, text: 'Hello world http://google.com', account: account) }
   let(:remote_status) { Fabricate(:status, text: '<script>alert("Hello")</script> Beep boop', uri: 'beepboop', account: account) }
 

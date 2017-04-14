@@ -4,7 +4,7 @@ describe WebfingerResource do
   describe '#username' do
     describe 'with a URL value' do
       it 'raises with an unrecognized route' do
-        resource = 'https://example.com/users/alice/other'
+        resource = 'https://example.com/users/mus/other'
 
         expect {
           WebfingerResource.new(resource).username
@@ -12,7 +12,7 @@ describe WebfingerResource do
       end
 
       it 'raises with a string that doesnt start with URL' do
-        resource = 'website for http://example.com/users/alice/other'
+        resource = 'website for http://example.com/users/mus/other'
 
         expect {
           WebfingerResource.new(resource).username
@@ -20,24 +20,24 @@ describe WebfingerResource do
       end
 
       it 'finds the username in a valid https route' do
-        resource = 'https://example.com/users/alice'
+        resource = 'https://example.com/users/mus'
 
         result = WebfingerResource.new(resource).username
-        expect(result).to eq 'alice'
+        expect(result).to eq 'mus'
       end
 
       it 'finds the username in a mixed case http route' do
-        resource = 'HTTp://exAMPLEe.com/users/alice'
+        resource = 'HTTp://exAMPLEe.com/users/mus'
 
         result = WebfingerResource.new(resource).username
-        expect(result).to eq 'alice'
+        expect(result).to eq 'mus'
       end
 
       it 'finds the username in a valid http route' do
-        resource = 'http://example.com/users/alice'
+        resource = 'http://example.com/users/mus'
 
         result = WebfingerResource.new(resource).username
-        expect(result).to eq 'alice'
+        expect(result).to eq 'mus'
       end
     end
 
@@ -52,10 +52,10 @@ describe WebfingerResource do
 
       it 'finds username for a local domain' do
         Rails.configuration.x.local_domain = 'example.com'
-        resource = 'alice@example.com'
+        resource = 'mus@example.com'
 
         result = WebfingerResource.new(resource).username
-        expect(result).to eq 'alice'
+        expect(result).to eq 'mus'
       end
     end
 
@@ -78,10 +78,10 @@ describe WebfingerResource do
 
       it 'finds the username for a local account' do
         Rails.configuration.x.local_domain = 'example.com'
-        resource = 'acct:alice@example.com'
+        resource = 'acct:mus@example.com'
 
         result = WebfingerResource.new(resource).username
-        expect(result).to eq 'alice'
+        expect(result).to eq 'mus'
       end
     end
   end

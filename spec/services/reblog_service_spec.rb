@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ReblogService do
-  let(:alice)  { Fabricate(:account, username: 'alice') }
+  let(:mus)  { Fabricate(:account, username: 'mus') }
   let(:bob)    { Fabricate(:account, username: 'bob', domain: 'example.com', salmon_url: 'http://salmon.example.com') }
   let(:status) { Fabricate(:status, account: bob, uri: 'tag:example.com;something:something') }
 
@@ -10,7 +10,7 @@ RSpec.describe ReblogService do
   before do
     stub_request(:post, 'http://salmon.example.com')
 
-    subject.(alice, status)
+    subject.(mus, status)
   end
 
   it 'creates a reblog' do
