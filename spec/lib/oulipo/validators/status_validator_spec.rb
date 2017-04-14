@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Oulipo::Validators::StatusValidator do
   let(:account)       { Fabricate(:account, username: 'mus') }
 
-  describe 'invalid statuses' do
+  describe 'invalid text' do
     subject  { Fabricate.build(:status, text: 'Treebeard is the eldest Ent!', account: account) }
 
     it 'checks for invalid glyphs' do
@@ -13,6 +13,19 @@ RSpec.describe Oulipo::Validators::StatusValidator do
     it 'adds an error message' do
       subject.valid?
       expect(subject.errors.messages[:text]).to eq([I18n.t('oulipo.invalid_symbol')])
+    end
+  end
+
+  describe 'invalid spoiler text' do
+    subject  { Fabricate.build(:status, text: 'No bad glyphs in this toot!', spoiler_text: "eeeeeeeeeeeeeeeeee!", account: account) }
+
+    it 'checks for invalid glyphs' do
+      expect(subject.valid?).to eq(false)
+    end
+
+    it 'adds an error message' do
+      subject.valid?
+      expect(subject.errors.messages[:spoiler_text]).to eq([I18n.t('oulipo.invalid_symbol')])
     end
   end
 

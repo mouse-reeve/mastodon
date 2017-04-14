@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 require 'nokogiri'
 require 'oulipo/oulipo'
+require 'formatter'
 
 module Oulipo
-  class Formatter < Mastodon::Formatter
+  class Formatter < Formatter
 
     def format(status)
       html = super
