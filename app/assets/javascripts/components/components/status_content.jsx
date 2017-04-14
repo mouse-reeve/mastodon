@@ -92,16 +92,8 @@ const StatusContent = React.createClass({
     const { status } = this.props;
     const { hidden } = this.state;
 
-    // How the Regex below works:
-    // [eE] <- any of the fifth glyph
-    // (?!  <- That does not match
-    // [^\<]* <- A bunch of things that are not a <
-    // \>)  <- Followed by a >
-    //
-    // gets replaced by "*"
-
-    const content = { __html: emojify(status.get('content')).replace(/\n/g, '').replace(new RegExp("[eE](?![^\<]*\>)", "g"), "*") };
-    const spoilerContent = { __html: emojify(escapeTextContentForBrowser(status.get('spoiler_text', ''))).replace(new RegExp("[eE](?![^\<]*\>)", "g"), "*") };
+    const content = { __html: emojify(status.get('content')).replace(/\n/g, '') };
+    const spoilerContent = { __html: emojify(escapeTextContentForBrowser(status.get('spoiler_text', ''))) };
     const directionStyle = { direction: 'ltr' };
 
     if (isRtl(status.get('content'))) {
