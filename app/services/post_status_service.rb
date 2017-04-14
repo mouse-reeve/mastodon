@@ -14,7 +14,6 @@ class PostStatusService < BaseService
   # @return [Status]
   def call(account, text, in_reply_to = nil, options = {})
     media  = validate_media!(options[:media_ids])
-
     # remove urls from oulipo validation
     validation_text= text.gsub(/http.?:\/\/[^\s\\]+/, '')
     # remove tags of federated users from validation (@user@domain.com)
