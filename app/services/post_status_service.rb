@@ -14,14 +14,6 @@ class PostStatusService < BaseService
   # @return [Status]
   def call(account, text, in_reply_to = nil, options = {})
     media  = validate_media!(options[:media_ids])
-    # remove urls from oulipo validation
-    validation_text= text.gsub(/http.?:\/\/[^\s\\]+/, '')
-    # remove tags of federated users from validation (@user@domain.com)
-    validation_text= validation_text.gsub(/@[^\s\\]+@[^\s\\]+\.[a-z]+/, '')
-    # remove emoji (:emoji_name:)
-    validation_text= validation_text.gsub(/\B:[a-zA-Z\d_]+:\B/, '')
-    raise Mastodon::ValidationError, 'Invalid symbol' if validation_text.downcase.include? 'e'
-    raise Mastodon::ValidationError, 'Invalid symbol' if options.fetch(:spoiler_text, '').to_s.downcase.include? 'e'
     status = account.statuses.create!(text: text,
                                       thread: in_reply_to,
                                       sensitive: options[:sensitive],

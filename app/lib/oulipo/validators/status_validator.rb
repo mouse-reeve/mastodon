@@ -21,16 +21,14 @@ module Oulipo
     end
 
     def toot_text(text)
-      no_urls = strip_urls(text)
-      strip_mentions(no_urls)
+      [URL_REGEX, MENTION_REGEX, EMOJI_REGEX].each do |regex|
+        text = strip_matches(text, regex)
+      end
+      return text
     end
 
-    def strip_urls(text)
-      text.gsub(/http.?:\/\/[^\s\\]+/, '')
-    end
-
-    def strip_mentions(text)
-      text.gsub(/@[^\s\\]+@[^\s\\]+\.[a-z]+/, '')
+    def strip_matches(text, regex)
+      text.gsub(regex, '')
     end
 
   end
