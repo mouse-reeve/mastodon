@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::OEmbedController, type: :controller do
   let(:mus)  { Fabricate(:account, username: 'mus') }
-  let(:status) { Fabricate(:status, text: 'Hello world', account: mus) }
+  let(:status) { Fabricate(:status, text: 'Hallo world', account: mus) }
 
   describe 'GET #show' do
     before do

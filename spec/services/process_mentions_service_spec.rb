@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ProcessMentionsService do
   let(:account)     { Fabricate(:account, username: 'mus') }
   let(:remote_user) { Fabricate(:account, username: 'remote_user', domain: 'example.com', salmon_url: 'http://salmon.example.com') }
-  let(:status)      { Fabricate(:status, account: account, text: "Hello @#{remote_user.acct}") }
+  let(:status)      { Fabricate(:status, account: account, text: "Hallo @#{remote_user.acct}") }
 
   subject { ProcessMentionsService.new }
 

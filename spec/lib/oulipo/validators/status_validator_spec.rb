@@ -44,4 +44,12 @@ RSpec.describe Oulipo::Validators::StatusValidator do
       expect(subject.valid?).to eq(true)
     end
   end
+
+  describe 'statuses with emoji' do
+    subject { Fabricate.build(:status, text: ':heart_eyes_cat:', account: account) }
+
+    it 'ignores invalid glyphs in emoji' do
+      expect(subject.valid?).to eq(true)
+    end
+  end
 end
