@@ -11,10 +11,10 @@ import ColumnHeader from './column_header';
 import Immutable from 'immutable';
 
 const messages = defineMessages({
-  home_title: { id: 'column.home', defaultMessage: 'Home' },
+  home_title: { id: 'column.home', defaultMessage: 'Origin' },
   notifications_title: { id: 'column.notifications', defaultMessage: 'Notifications' },
-  local_title: { id: 'column.community', defaultMessage: 'Local timeline' },
-  federated_title: { id: 'column.public', defaultMessage: 'Federated timeline' }
+  local_title: { id: 'column.community', defaultMessage: 'Community activity' },
+  federated_title: { id: 'column.public', defaultMessage: 'Global activity' }
 });
 
 const PageOne = ({ acct, domain }) => (
@@ -24,9 +24,9 @@ const PageOne = ({ acct, domain }) => (
     </div>
 
     <div>
-      <h1><FormattedMessage id='onboarding.page_one.welcome' defaultMessage='Welcome to Mastodon!' /></h1>
-      <p><FormattedMessage id='onboarding.page_one.federation' defaultMessage='Mastodon is a social network that belongs to everyone.' /></p>
-      <p><FormattedMessage id='onboarding.page_one.handle' defaultMessage='You are on {domain}, one of many independent Mastodon instances. Your full handle is {handle}' values={{ domain, handle: <strong>{acct}@{domain}</strong> }}/></p>
+      <h1><FormattedMessage id='onboarding.page_one.welcome' defaultMessage='Hi, you found Oulipo Mastodon!' /></h1>
+      <p><FormattedMessage id='onboarding.page_one.federation' defaultMessage='Mastodon is a social hub that for all.' /></p>
+      <p><FormattedMessage id='onboarding.page_one.handle' defaultMessage='This is {domain}, an instantiaion among many Mastodon instantiations. Your full alias is {handle}' values={{ domain, handle: <strong>{acct}@{domain}</strong> }}/></p>
     </div>
   </div>
 );
@@ -54,7 +54,7 @@ const PageTwo = () => (
       />
     </div>
 
-    <p><FormattedMessage id='onboarding.page_two.compose' defaultMessage='Write posts from the compose column. You can upload images, change privacy settings, and add content warnings with the icons below.' /></p>
+    <p><FormattedMessage id='onboarding.page_two.compose' defaultMessage='Draft posts in your composition column. You can upload photos, control visibility, and add tricky topic warnings.' /></p>
   </div>
 );
 
@@ -74,8 +74,8 @@ const PageThree = ({ me, domain }) => (
       </div>
     </div>
 
-    <p><FormattedMessage id='onboarding.page_three.search' defaultMessage='Use the search bar to find people and look at hashtags, such as {illustration} and {introductions}. To look for a person who is not on this instance, use their full handle.' values={{ illustration: <Permalink to='/timelines/tag/illustration' href='/tags/illustration'>#illustration</Permalink>, introductions: <Permalink to='/timelines/tag/introductions' href='/tags/introductions'>#introductions</Permalink> }}/></p>
-    <p><FormattedMessage id='onboarding.page_three.profile' defaultMessage='Edit your profile to change your avatar, bio, and display name. There, you will also find other preferences.' /></p>
+    <p><FormattedMessage id='onboarding.page_three.search' defaultMessage="Try using our inquiry bar to find accounts and look at hashtags, such as {illustration} and {introductions}. To look for an account  who is not on this instantiation, look for that account's full alias." values={{ illustration: <Permalink to='/timelines/tag/drilipo' href='/tags/drilipo'>#drilipo</Permalink>, introductions: <Permalink to='/timelines/tag/introductions' href='/tags/introductions'>#introductions</Permalink> }}/></p>
+    <p><FormattedMessage id='onboarding.page_three.profile' defaultMessage='Modify your bio to upload an avatar, bio, and display alias. This is also a spot for additional options and configurations.' /></p>
   </div>
 );
 
@@ -90,12 +90,12 @@ const PageFour = ({ domain, intl }) => (
       <div className='row'>
         <div>
           <div className='figure non-interactive'><ColumnHeader icon='home' type={intl.formatMessage(messages.home_title)} /></div>
-          <p><FormattedMessage id='onboarding.page_four.home' defaultMessage='Home timeline shows posts from people you follow'/></p>
+          <p><FormattedMessage id='onboarding.page_four.home' defaultMessage='Origin activity shows posts from folks you follow'/></p>
         </div>
 
         <div>
           <div className='figure non-interactive'><ColumnHeader icon='bell' type={intl.formatMessage(messages.notifications_title)} /></div>
-          <p><FormattedMessage id='onboarding.page_four.notifications' defaultMessage='Notifications show when someone interacts with you' /></p>
+          <p><FormattedMessage id='onboarding.page_four.notifications' defaultMessage='Notifications show if anybody boosts, stars, or talks with you' /></p>
         </div>
       </div>
 
@@ -109,7 +109,7 @@ const PageFour = ({ domain, intl }) => (
         </div>
       </div>
 
-      <p><FormattedMessage id='onboarding.page_five.public_timelines' defaultMessage='Federated timeline lists public posts from everyone who people on {domain} follow. Local timeline is the same, but limited to people on {domain}.' values={{ domain }} /></p>
+      <p><FormattedMessage id='onboarding.page_five.public_timelines' defaultMessage='Global activity lists public posts from all accounts who anybody on {domain} follow. Community activity is similar, but only shows accounts on {domain}.' values={{ domain }} /></p>
     </div>
   </div>
 );
@@ -125,19 +125,19 @@ const PageSix = ({ admin }) => {
   if (admin) {
     adminSection = (
       <p>
-        <FormattedMessage id='onboarding.page_six.admin' defaultMessage="Your instance's admin is {admin}." values={{ admin: <Permalink href={admin.get('url')} to={`/accounts/${admin.get('id')}`}>@{admin.get('acct')}</Permalink> }} />
+        <FormattedMessage id='onboarding.page_six.admin' defaultMessage="Your instantiation's admin is {admin}." values={{ admin: <Permalink href={admin.get('url')} to={`/accounts/${admin.get('id')}`}>@{admin.get('acct')}</Permalink> }} />
         <br />
-        <FormattedMessage id='onboarding.page_six.read_guidelines' defaultMessage='Please, do not forget to read the {guidelines}!' values={{ guidelines: <a href='/about/more' target='_blank'><FormattedMessage id='onboarding.page_six.guidelines' defaultMessage='community guidelines' /></a> }}/>
+        <FormattedMessage id='onboarding.page_six.read_guidelines' defaultMessage='Do look at our FAQ and {guidelines}!' values={{ guidelines: <a href='/about/more' target='_blank'><FormattedMessage id='onboarding.page_six.guidelines' defaultMessage='community social contract' /></a> }}/>
       </p>
     );
   }
 
   return (
     <div className='onboarding-modal__page onboarding-modal__page-six'>
-      <h1><FormattedMessage id='onboarding.page_six.almost_done' defaultMessage='Almost done...' /></h1>
+      <h1><FormattedMessage id='onboarding.page_six.almost_done' defaultMessage='Almost got it...' /></h1>
       {adminSection}
-      <p><FormattedMessage id='onboarding.page_six.github' defaultMessage='Mastodon is free open-source software. You can report bugs, request features, or contribute to the code on {github}.' values={{ github: <a href='https://github.com/tootsuite/mastodon' target='_blank' rel='noopener'>GitHub</a> }} /></p>
-      <p><FormattedMessage id='onboarding.page_six.apps_available' defaultMessage='There are {apps} available for iOS, Android and other platforms. And now... Bon Appetoot!' values={{ apps: <a href='https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md' target='_blank' rel='noopener'><FormattedMessage id='onboarding.page_six.various_app' defaultMessage='various mobile apps' /></a> }} /></p>
+      <p><FormattedMessage id='onboarding.page_six.github' defaultMessage='Mastodon is "FOSS". You can add contributions or log a bug on GitHub at {github}.' values={{ github: <a href='https://github.com/tootsuite/mastodon' target='_blank' rel='noopener'>GitHub</a> }} /></p>
+      <p><FormattedMessage id='onboarding.page_six.apps_available' defaultMessage='You can find {apps} for iOS and Android. And now... Bon Oulitoot!' values={{ apps: <a href='https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md' target='_blank' rel='noopener'><FormattedMessage id='onboarding.page_six.various_app' defaultMessage='various apps' /></a> }} /></p>
     </div>
   );
 };
