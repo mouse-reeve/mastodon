@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe FanOutOnWriteService do
   let(:author)   { Fabricate(:account, username: 'tom') }
-  let(:status)   { Fabricate(:status, text: 'Hallo @mus #tst', account: author) }
+  let(:status)   { Fabricate(:status, text: 'Hello @mus #test', account: author) }
   let(:mus)    { Fabricate(:user, account: Fabricate(:account, username: 'mus')).account }
   let(:follower) { Fabricate(:account, username: 'bob') }
 
@@ -28,7 +28,7 @@ RSpec.describe FanOutOnWriteService do
   end
 
   it 'delivers status to hashtag' do
-    expect(Tag.find_by!(name: 'tst').statuses.pluck(:id)).to include status.id
+    expect(Tag.find_by!(name: 'test').statuses.pluck(:id)).to include status.id
   end
 
   it 'delivers status to public timeline' do

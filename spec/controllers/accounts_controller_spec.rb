@@ -7,11 +7,11 @@ RSpec.describe AccountsController, type: :controller do
 
   describe 'GET #show' do
     before do
-      status1 = Status.create!(account: mus, text: 'Hllo world')
+      status1 = Status.create!(account: mus, text: 'Hello world')
       Status.create!(account: mus, text: 'Boop', thread: status1)
-      status3 = Status.create!(account: mus, text: 'Pictur!')
+      status3 = Status.create!(account: mus, text: 'Picture!')
       status3.media_attachments.create!(account: mus, file: fixture_file_upload('files/attachment.jpg', 'image/jpeg'))
-      Status.create!(account: mus, text: 'Mntioning @mus')
+      Status.create!(account: mus, text: 'Mentioning @mus')
     end
 
     context 'atom' do
