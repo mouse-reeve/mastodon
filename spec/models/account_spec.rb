@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
-  subject { Fabricate(:account, username: 'alice') }
+  subject { Fabricate(:account, username: 'mus') }
 
   context do
     let(:bob) { Fabricate(:account, username: 'bob') }
@@ -65,7 +65,7 @@ RSpec.describe Account, type: :model do
       it 'returns a webfinger string for the account' do
         Rails.configuration.x.local_domain = 'example.com'
 
-        expect(subject.to_webfinger_s).to eq 'acct:alice@example.com'
+        expect(subject.to_webfinger_s).to eq 'acct:mus@example.com'
       end
     end
 
@@ -73,19 +73,19 @@ RSpec.describe Account, type: :model do
       it 'returns the username and local domain for the account' do
         Rails.configuration.x.local_domain = 'example.com'
 
-        expect(subject.local_username_and_domain).to eq 'alice@example.com'
+        expect(subject.local_username_and_domain).to eq 'mus@example.com'
       end
     end
   end
 
   describe '#acct' do
     it 'returns username for local users' do
-      expect(subject.acct).to eql 'alice'
+      expect(subject.acct).to eql 'mus'
     end
 
     it 'returns username@domain for foreign users' do
       subject.domain = 'foreign.tld'
-      expect(subject.acct).to eql 'alice@foreign.tld'
+      expect(subject.acct).to eql 'mus@foreign.tld'
     end
   end
 
@@ -130,7 +130,7 @@ RSpec.describe Account, type: :model do
 
     context 'when the status is a reblog of another status' do
       let(:original_reblog) do
-        author = Fabricate(:account, username: 'original_reblogger')
+        author = Fabricate(:account, username: 'original_rbloggr')
         Fabricate(:status, reblog: original_status, account: author)
       end
 
@@ -166,7 +166,7 @@ RSpec.describe Account, type: :model do
 
     context 'when the status is a reblog of another status'do
       let(:original_reblog) do
-        author = Fabricate(:account, username: 'original_reblogger')
+        author = Fabricate(:account, username: 'original_rbloggr')
         Fabricate(:status, reblog: original_status, account: author)
       end
 
@@ -198,8 +198,8 @@ RSpec.describe Account, type: :model do
     before do
       @match = Fabricate(
         :account,
-        display_name: "Display Name",
-        username: "username",
+        display_name: "Display",
+        username: "usrnam",
         domain: "example.com"
       )
       _missing = Fabricate(
@@ -216,7 +216,7 @@ RSpec.describe Account, type: :model do
     end
 
     it 'finds accounts with matching username' do
-      results = Account.search_for("username")
+      results = Account.search_for("usrnam")
       expect(results).to eq [@match]
     end
 
@@ -228,10 +228,10 @@ RSpec.describe Account, type: :model do
     it 'ranks multiple matches higher' do
       account = Fabricate(
         :account,
-        username: "username",
-        display_name: "username"
+        username: "usrnam",
+        display_name: "usrnam"
       )
-      results = Account.search_for("username")
+      results = Account.search_for("usrnam")
       expect(results).to eq [account, @match]
     end
   end
@@ -240,7 +240,7 @@ RSpec.describe Account, type: :model do
     it 'ranks followed accounts higher' do
       account = Fabricate(:account)
       match = Fabricate(:account, username: "Matching")
-      followed_match = Fabricate(:account, username: "Matcher")
+      followed_match = Fabricate(:account, username: "Matchr")
       Fabricate(:follow, account: account, target_account: followed_match)
 
       results = Account.advanced_search_for("match", account)
@@ -251,15 +251,15 @@ RSpec.describe Account, type: :model do
 
   describe '.find_local' do
     before do
-      Fabricate(:account, username: 'Alice')
+      Fabricate(:account, username: 'mus')
     end
 
-    it 'returns Alice for alice' do
-      expect(Account.find_local('alice')).to_not be_nil
+    it 'returns mus for mus' do
+      expect(Account.find_local('mus')).to_not be_nil
     end
 
-    it 'returns Alice for Alice' do
-      expect(Account.find_local('Alice')).to_not be_nil
+    it 'returns mus for mus' do
+      expect(Account.find_local('mus')).to_not be_nil
     end
 
     it 'does not return anything for a_ice' do
@@ -273,27 +273,27 @@ RSpec.describe Account, type: :model do
 
   describe '.find_remote' do
     before do
-      Fabricate(:account, username: 'Alice', domain: 'mastodon.social')
+      Fabricate(:account, username: 'mus', domain: 'mastodon.social')
     end
 
-    it 'returns Alice for alice@mastodon.social' do
-      expect(Account.find_remote('alice', 'mastodon.social')).to_not be_nil
+    it 'returns mus for mus@mastodon.social' do
+      expect(Account.find_remote('mus', 'mastodon.social')).to_not be_nil
     end
 
-    it 'returns Alice for ALICE@MASTODON.SOCIAL' do
-      expect(Account.find_remote('ALICE', 'MASTODON.SOCIAL')).to_not be_nil
+    it 'returns mus for mus@MASTODON.SOCIAL' do
+      expect(Account.find_remote('mus', 'MASTODON.SOCIAL')).to_not be_nil
     end
 
     it 'does not return anything for a_ice@mastodon.social' do
       expect(Account.find_remote('a_ice', 'mastodon.social')).to be_nil
     end
 
-    it 'does not return anything for alice@m_stodon.social' do
-      expect(Account.find_remote('alice', 'm_stodon.social')).to be_nil
+    it 'does not return anything for mus@m_stodon.social' do
+      expect(Account.find_remote('mus', 'm_stodon.social')).to be_nil
     end
 
-    it 'does not return anything for alice@m%' do
-      expect(Account.find_remote('alice', 'm%')).to be_nil
+    it 'does not return anything for mus@m%' do
+      expect(Account.find_remote('mus', 'm%')).to be_nil
     end
   end
 
@@ -325,31 +325,31 @@ RSpec.describe Account, type: :model do
     subject { Account::MENTION_RE }
 
     it 'matches usernames in the middle of a sentence' do
-      expect(subject.match('Hello to @alice from me')[1]).to eq 'alice'
+      expect(subject.match('Hello to @mus from me')[1]).to eq 'mus'
     end
 
     it 'matches usernames in the beginning of status' do
-      expect(subject.match('@alice Hey how are you?')[1]).to eq 'alice'
+      expect(subject.match('@mus Hey how are you?')[1]).to eq 'mus'
     end
 
     it 'matches full usernames' do
-      expect(subject.match('@alice@example.com')[1]).to eq 'alice@example.com'
+      expect(subject.match('@mus@example.com')[1]).to eq 'mus@example.com'
     end
 
     it 'matches full usernames with a dot at the end' do
-      expect(subject.match('Hello @alice@example.com.')[1]).to eq 'alice@example.com'
+      expect(subject.match('Hello @mus@example.com.')[1]).to eq 'mus@example.com'
     end
 
     it 'matches dot-prepended usernames' do
-      expect(subject.match('.@alice I want everybody to see this')[1]).to eq 'alice'
+      expect(subject.match('.@mus I want everybody to see this')[1]).to eq 'mus'
     end
 
     it 'does not match e-mails' do
-      expect(subject.match('Drop me an e-mail at alice@example.com')).to be_nil
+      expect(subject.match('Drop me an e-mail at mus@example.com')).to be_nil
     end
 
     it 'does not match URLs' do
-      expect(subject.match('Check this out https://medium.com/@alice/some-article#.abcdef123')).to be_nil
+      expect(subject.match('Check this out https://medium.com/@mus/some-article#.abcdef123')).to be_nil
     end
   end
 
@@ -367,15 +367,15 @@ RSpec.describe Account, type: :model do
     end
 
     it 'is invalid if the username already exists' do
-      account_1 = Fabricate(:account, username: 'the_doctor')
-      account_2 = Fabricate.build(:account, username: 'the_doctor')
+      account_1 = Fabricate(:account, username: 'th_doctor')
+      account_2 = Fabricate.build(:account, username: 'th_doctor')
       account_2.valid?
       expect(account_2).to model_have_error_on_field(:username)
     end
 
     context 'when is local' do
       it 'is invalid if the username doesn\'t only contains letters, numbers and underscores' do
-        account = Fabricate.build(:account, username: 'the-doctor')
+        account = Fabricate.build(:account, username: 'th-doctor')
         account.valid?
         expect(account).to model_have_error_on_field(:username)
       end

@@ -17,7 +17,7 @@ class PostStatusService < BaseService
     text_without_urls= text.gsub(/http.?:\/\/[^\s\\]+/, '')
     text_without_urls= text_without_urls.gsub(/@[^\s\\]+@[^\s\\]+\.[a-z]+/, '')
     raise Mastodon::ValidationError, 'Invalid symbol' if text_without_urls.downcase.include? 'e'
-    raise Mastodon::ValidationError, 'Invalid symbol' if options[:spoiler_text].downcase.include? 'e'
+    raise Mastodon::ValidationError, 'Invalid symbol' if options.fetch(:spoiler_text, '').to_s.downcase.include? 'e'
     status = account.statuses.create!(text: text,
                                       thread: in_reply_to,
                                       sensitive: options[:sensitive],

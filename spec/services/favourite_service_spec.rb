@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe FavouriteService do
-  let(:sender) { Fabricate(:account, username: 'alice') }
+  let(:sender) { Fabricate(:account, username: 'mus') }
 
   subject { FavouriteService.new }
 
