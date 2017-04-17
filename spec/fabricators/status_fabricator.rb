@@ -1,4 +1,4 @@
 Fabricator(:status) do
   account
-  text "Lorem ipsum dolor sit amet"
+  text "Lorm ipsum dolor sit amt"
 end

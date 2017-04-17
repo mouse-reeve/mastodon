@@ -21,7 +21,7 @@ const NavigationBar = React.createClass({
 
         <div style={{ flex: '1 1 auto', marginLeft: '8px' }}>
           <strong style={{ fontWeight: '500', display: 'block' }}>{this.props.account.get('acct')}</strong>
-          <a href='/settings/profile' style={{ color: 'inherit', textDecoration: 'none' }}><FormattedMessage id='navigation_bar.edit_profile' defaultMessage='Edit profile' /></a>
+          <a href='/settings/profile' style={{ color: 'inherit', textDecoration: 'none' }}><FormattedMessage id='navigation_bar.edit_profile' defaultMessage='Modify bio' /></a>
         </div>
       </div>
     );

@@ -1,12 +1,12 @@
 Welcome <%= @resource.email %> !
 
-You just created an account on <%= @instance %>.
+You just got an account on <%= @instance %>.
 
-To confirm your inscription, please click on the following link :
+To confirm, click on this following link:
 <%= confirmation_url(@resource, confirmation_token: @token) %>
 
-Please also check out our terms and conditions <%= terms_url %>
+Additionally, look at our social contract <%= terms_url %>
 
-Sincerely,
+Thanks,
 
-The <%= @instance %> team
+<%= @instance %>

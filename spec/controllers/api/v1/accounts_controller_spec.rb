@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::AccountsController, type: :controller do
   render_views
 
-  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
+  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
   let(:token) { double acceptable?: true, resource_owner_id: user.id }
 
   before do
@@ -31,7 +31,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
         header = File.read(Rails.root.join('app', 'assets', 'images', 'mastodon-getting-started.png'))
 
         patch :update_credentials, params: {
-          display_name: "Alice Isn't Dead",
+          display_name: "mus Isn't Dad",
           note: "Hi!\n\nToot toot!",
           avatar: "data:image/png;base64,#{Base64.encode64(avatar)}",
           header: "data:image/png;base64,#{Base64.encode64(header)}",
@@ -45,7 +45,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
       it 'updates account info' do
         user.account.reload
 
-        expect(user.account.display_name).to eq("Alice Isn't Dead")
+        expect(user.account.display_name).to eq("mus Isn't Dad")
         expect(user.account.note).to eq("Hi!\n\nToot toot!")
         expect(user.account.avatar).to exist
         expect(user.account.header).to exist
@@ -195,11 +195,11 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
 
   describe 'GET #relationships' do
     let(:simon) { Fabricate(:user, email: 'simon@example.com', account: Fabricate(:account, username: 'simon')).account }
-    let(:lewis) { Fabricate(:user, email: 'lewis@example.com', account: Fabricate(:account, username: 'lewis')).account }
+    let(:louis) { Fabricate(:user, email: 'louis@example.com', account: Fabricate(:account, username: 'louis')).account }
 
     before do
       user.account.follow!(simon)
-      lewis.follow!(user.account)
+      louis.follow!(user.account)
     end
 
     context 'provided only one ID' do
@@ -222,7 +222,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
 
     context 'provided multiple IDs' do
       before do
-        get :relationships, params: { id: [simon.id, lewis.id] }
+        get :relationships, params: { id: [simon.id, louis.id] }
       end
 
       it 'returns http success' do

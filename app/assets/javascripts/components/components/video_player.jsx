@@ -5,10 +5,10 @@ import { defineMessages, injectIntl, FormattedMessage } from 'react-intl';
 import { isIOS } from '../is_mobile';
 
 const messages = defineMessages({
-  toggle_sound: { id: 'video_player.toggle_sound', defaultMessage: 'Toggle sound' },
-  toggle_visible: { id: 'video_player.toggle_visible', defaultMessage: 'Toggle visibility' },
-  expand_video: { id: 'video_player.expand', defaultMessage: 'Expand video' },
-  expand_video: { id: 'video_player.video_error', defaultMessage: 'Video could not be played' }
+  toggle_sound: { id: 'video_player.toggle_sound', defaultMessage: 'Switch sound' },
+  toggle_visible: { id: 'video_player.toggle_visible', defaultMessage: 'Switch visibility' },
+  expand_video: { id: 'video_player.expand', defaultMessage: 'Show' },
+  expand_video: { id: 'video_player.video_error', defaultMessage: 'Could not play' }
 });
 
 const videoStyle = {
@@ -205,16 +205,16 @@ const VideoPlayer = React.createClass({
         return (
           <div role='button' tabIndex='0' style={{...coverStyle, width: `${width}px`, height: `${height}px` }} className='media-spoiler' onClick={this.handleVisibility}>
             {spoilerButton}
-            <span style={spoilerSpanStyle}><FormattedMessage id='status.sensitive_warning' defaultMessage='Sensitive content' /></span>
-            <span style={spoilerSubSpanStyle}><FormattedMessage id='status.sensitive_toggle' defaultMessage='Click to view' /></span>
+            <span style={spoilerSpanStyle}><FormattedMessage id='status.sensitive_warning' defaultMessage='Tricky topic' /></span>
+            <span style={spoilerSubSpanStyle}><FormattedMessage id='status.sensitive_toggle' defaultMessage='Click to show' /></span>
           </div>
         );
       } else {
         return (
           <div role='button' tabIndex='0' style={{...coverStyle, width: `${width}px`, height: `${height}px` }} className='media-spoiler' onClick={this.handleVisibility}>
             {spoilerButton}
-            <span style={spoilerSpanStyle}><FormattedMessage id='status.media_hidden' defaultMessage='Media hidden' /></span>
-            <span style={spoilerSubSpanStyle}><FormattedMessage id='status.sensitive_toggle' defaultMessage='Click to view' /></span>
+            <span style={spoilerSpanStyle}><FormattedMessage id='status.media_hidden' defaultMessage='Visuals not shown' /></span>
+            <span style={spoilerSubSpanStyle}><FormattedMessage id='status.sensitive_toggle' defaultMessage='Click to show' /></span>
           </div>
         );
       }

@@ -5,15 +5,15 @@ import DropdownMenu from './dropdown_menu';
 import { defineMessages, injectIntl } from 'react-intl';
 
 const messages = defineMessages({
-  delete: { id: 'status.delete', defaultMessage: 'Delete' },
-  mention: { id: 'status.mention', defaultMessage: 'Mention @{name}' },
-  mute: { id: 'account.mute', defaultMessage: 'Mute @{name}' },
+  delete: { id: 'status.delete', defaultMessage: 'Discard' },
+  mention: { id: 'status.mention', defaultMessage: 'Tag @{name}' },
+  mute: { id: 'account.mute', defaultMessage: "Don't show @{name}" },
   block: { id: 'account.block', defaultMessage: 'Block @{name}' },
-  reply: { id: 'status.reply', defaultMessage: 'Reply' },
-  reblog: { id: 'status.reblog', defaultMessage: 'Reblog' },
-  favourite: { id: 'status.favourite', defaultMessage: 'Favourite' },
-  open: { id: 'status.open', defaultMessage: 'Expand this status' },
-  report: { id: 'status.report', defaultMessage: 'Report @{name}' }
+  reply: { id: 'status.reply', defaultMessage: 'Start dialog' },
+  reblog: { id: 'status.reblog', defaultMessage: 'Boost' },
+  favourite: { id: 'status.favourite', defaultMessage: 'Star' },
+  open: { id: 'status.open', defaultMessage: 'Go to this status' },
+  report: { id: 'status.report', defaultMessage: 'Flag @{name}' }
 });
 
 const StatusActionBar = React.createClass({

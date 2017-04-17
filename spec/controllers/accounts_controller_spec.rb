@@ -3,20 +3,20 @@ require 'rails_helper'
 RSpec.describe AccountsController, type: :controller do
   render_views
 
-  let(:alice)  { Fabricate(:account, username: 'alice') }
+  let(:mus)  { Fabricate(:account, username: 'mus') }
 
   describe 'GET #show' do
     before do
-      status1 = Status.create!(account: alice, text: 'Hello world')
-      Status.create!(account: alice, text: 'Boop', thread: status1)
-      status3 = Status.create!(account: alice, text: 'Picture!')
-      status3.media_attachments.create!(account: alice, file: fixture_file_upload('files/attachment.jpg', 'image/jpeg'))
-      Status.create!(account: alice, text: 'Mentioning @alice')
+      status1 = Status.create!(account: mus, text: 'Hello world')
+      Status.create!(account: mus, text: 'Boop', thread: status1)
+      status3 = Status.create!(account: mus, text: 'Picture!')
+      status3.media_attachments.create!(account: mus, file: fixture_file_upload('files/attachment.jpg', 'image/jpeg'))
+      Status.create!(account: mus, text: 'Mentioning @mus')
     end
 
     context 'atom' do
       before do
-        get :show, params: { username: alice.username }, format: 'atom'
+        get :show, params: { username: mus.username }, format: 'atom'
       end
 
       it 'returns http success with Atom' do
@@ -26,7 +26,7 @@ RSpec.describe AccountsController, type: :controller do
 
     context 'activitystreams2' do
       before do
-        get :show, params: { username: alice.username }, format: 'activitystreams2'
+        get :show, params: { username: mus.username }, format: 'activitystreams2'
       end
 
       it 'returns http success with Activity Streams 2.0' do
@@ -36,7 +36,7 @@ RSpec.describe AccountsController, type: :controller do
 
     context 'html' do
       before do
-        get :show, params: { username: alice.username }
+        get :show, params: { username: mus.username }
       end
 
       it 'returns http success' do
@@ -47,14 +47,14 @@ RSpec.describe AccountsController, type: :controller do
 
   describe 'GET #followers' do
     it 'returns http success' do
-      get :followers, params: { username: alice.username }
+      get :followers, params: { username: mus.username }
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'GET #following' do
     it 'returns http success' do
-      get :following, params: { username: alice.username }
+      get :following, params: { username: mus.username }
       expect(response).to have_http_status(:success)
     end
   end

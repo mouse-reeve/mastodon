@@ -12,8 +12,8 @@ import Immutable from 'immutable';
 import ColumnBackButtonSlim from '../../components/column_back_button_slim';
 
 const messages = defineMessages({
-  heading: { id: 'report.heading', defaultMessage: 'New report' },
-  placeholder: { id: 'report.placeholder', defaultMessage: 'Additional comments' },
+  heading: { id: 'report.heading', defaultMessage: 'Flag account' },
+  placeholder: { id: 'report.placeholder', defaultMessage: 'Additional information' },
   submit: { id: 'report.submit', defaultMessage: 'Submit' }
 });
 
@@ -97,7 +97,7 @@ const Report = React.createClass({
 
         <div className='report scrollable' style={{ display: 'flex', flexDirection: 'column', maxHeight: '100%', boxSizing: 'border-box' }}>
           <div className='report__target' style={{ flex: '0 0 auto', padding: '10px' }}>
-            <FormattedMessage id='report.target' defaultMessage='Reporting' />
+            <FormattedMessage id='report.target' defaultMessage='Flagging' />
             <strong>{account.get('acct')}</strong>
           </div>
 

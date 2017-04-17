@@ -18,7 +18,7 @@ import TextIconButton from './text_icon_button';
 
 const messages = defineMessages({
   placeholder: { id: 'compose_form.placeholder', defaultMessage: 'What is on your mind?' },
-  spoiler_placeholder: { id: 'compose_form.spoiler_placeholder', defaultMessage: 'Content warning' },
+  spoiler_placeholder: { id: 'compose_form.spoiler_placeholder', defaultMessage: 'Tricky topic warning' },
   publish: { id: 'compose_form.publish', defaultMessage: 'Toot' }
 });
 
@@ -141,7 +141,7 @@ const ComposeForm = React.createClass({
         <div className='compose-form__warning'>
           <FormattedMessage
             id='compose_form.privacy_disclaimer'
-            defaultMessage='Your private status will be delivered to mentioned users on {domains}. Do you trust {domainsCount, plural, one {that server} other {those servers}} to not leak your status?'
+            defaultMessage='Your privy status is shown to accounts you tag on {domains}. Do you trust {domainsCount, plural, one {that instantiation} other {this group of instantiations}} with your status?'
             values={{ domains: <strong>{mentionedDomains.join(', ')}</strong>, domainsCount: mentionedDomains.length }}
           />
         </div>

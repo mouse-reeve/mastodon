@@ -1,43 +1,43 @@
 ---
 en:
   about:
-    about_mastodon: Mastodon is a <em>free, open-source</em> social network. A <em>decentralized</em> alternative to commercial platforms, it avoids the risks of a single company monopolizing your communication. Pick a server that you trust &mdash; whichever you choose, you can interact with everyone else. Anyone can run their own Mastodon instance and participate in the <em>social network</em> seamlessly.
-    about_this: About this instance
+    about_mastodon: Mastodon is a <em>"FOSS"</em> social sharing hub. A <em>multi-host</em> substitution for capitalistic platforms, it avoids risks of a particular company monopolizing your communication. Pick a host that you trust &mdash; you can still talk with all hosts running Mastadon. Any individual can run a Mastodon instantiation and join in this <em>social hub</em> in a jiffy.
+    about_this: About this instantiation
     apps: Apps
-    business_email: 'Business e-mail:'
-    closed_registrations: Registrations are currently closed on this instance.
+    business_email: 'Contact:'
+    closed_registrations: Right now, nobody may join this instantiation.
     contact: Contact
     description_headline: What is %{domain}?
-    domain_count_after: other instances
-    domain_count_before: Connected to
+    domain_count_after: instantiations
+    domain_count_before: Links found to
     features:
-      api: Open API for apps and services
+      api: API for apps and tools
       blocks: Rich block and muting tools
-      characters: 500 characters per post
-      chronology: Timelines are chronological
-      ethics: 'Ethical design: no ads, no tracking'
-      gifv: GIFV sets and short videos
-      privacy: Granular, per-post privacy settings
-      public: Public timelines
-    features_headline: What sets Mastodon apart
-    get_started: Get started
+      characters: 500 symbols in any post, without that fifth symbol in Latin writing
+      chronology: Activity is chronological
+      ethics: 'Morally built: no ads, no tracking'
+      gifv: GIFV and short vids
+      privacy: Granular privacy controls
+      public: Public activity
+    features_headline: What puts Mastodon apart
+    get_started: Start
     links: Links
-    other_instances: Other instances
-    source_code: Source code
-    status_count_after: statuses
-    status_count_before: Who authored
-    terms: Terms
-    user_count_after: users
-    user_count_before: Home to
+    other_instances: All instantiations
+    source_code: Github
+    status_count_after: posts
+    status_count_before: Who said
+    terms: Privacy Policy
+    user_count_after: accounts
+    user_count_before: Contains
   accounts:
     follow: Follow
-    followers: Followers
+    followers: Accounts following
     following: Following
-    nothing_here: There is nothing here!
-    people_followed_by: People whom %{name} follows
-    people_who_follow: People who follow %{name}
+    nothing_here: Sorry, nothing in this spot!
+    people_followed_by: Accounts whom %{name} follows
+    people_who_follow: Accounts who follow %{name}
     posts: Posts
-    remote_follow: Remote follow
+    remote_follow: Follow from afar
     unfollow: Unfollow
   admin:
     accounts:
@@ -160,25 +160,25 @@ en:
       title: Site Settings
     title: Administration
   application_mailer:
-    settings: 'Change e-mail preferences: %{link}'
+    settings: 'Modify mail options: %{link}'
     signature: Mastodon notifications from %{instance}
-    view: 'View:'
+    view: 'Look at:'
   applications:
-    invalid_url: The provided URL is invalid
+    invalid_url: This URL is invalid
   auth:
-    change_password: Credentials
-    didnt_get_confirmation: Didn't receive confirmation instructions?
+    change_password: Authorization
+    didnt_get_confirmation: Didn't find confirmation instructions?
     forgot_password: Forgot your password?
     login: Log in
     logout: Logout
     register: Sign up
-    resend_confirmation: Resend confirmation instructions
-    reset_password: Reset password
-    set_new_password: Set new password
+    resend_confirmation: Dispatch confirmation
+    reset_password: Forgot password
+    set_new_password: Pick a password
   authorize_follow:
-    error: Unfortunately, there was an error looking up the remote account
+    error: Sorry, this account was not found
     follow: Follow
-    prompt_html: 'You (<strong>%{self}</strong>) have requested to follow:'
+    prompt_html: 'You (<strong>%{self}</strong>) want to follow:'
     title: Follow %{acct}
   datetime:
     distance_in_words:
@@ -195,109 +195,109 @@ en:
       x_months: "%{count}mo"
       x_seconds: "%{count}s"
   errors:
-    '404': The page you were looking for doesn't exist.
-    '410': The page you were looking for doesn't exist anymore.
+    '404': Sorry, not found!
+    '410': This isn't a spot now.
     '422':
-      content: Security verification failed. Are you blocking cookies?
-      title: Security verification failed
+      content: Validation didn't work. Is your configuration blocking us from storing browsing data?
+      title: Validation didn't work
   exports:
     blocks: You block
     csv: CSV
     follows: You follow
-    mutes: You mute
-    storage: Media storage
+    mutes: You don't show
+    storage: Data
   generic:
-    changes_saved_msg: Changes successfully saved!
-    powered_by: powered by %{link}
-    save_changes: Save changes
+    changes_saved_msg: Your modifications took!
+    powered_by: run by %{link}
+    save_changes: Confirm
     validation_errors:
-      one: Something isn't quite right yet! Please review the error below
-      other: Something isn't quite right yet! Please review %{count} errors below
+      one: Oops, that's not right! Look at this
+      other: Oops, that's not right! Look at this
   imports:
-    preface: You can import certain data like all the people you are following or blocking into your account on this instance, from files created by an export on another instance.
-    success: Your data was successfully uploaded and will now be processed in due time
+    preface: You can import many kinds of data, such as all accounts you follow or block into your account on this instantiation, from data built by a download from any instantiation.
+    success: Your data is on our instantiation and is now loading
     types:
       blocking: Blocking list
       following: Following list
       muting: Muting list
     upload: Upload
-  landing_strip_html: <strong>%{name}</strong> is a user on <strong>%{domain}</strong>. You can follow them or interact with them if you have an account anywhere in the fediverse. If you don't, you can <a href="%{sign_up_path}">sign up here</a>.
+  landing_strip_html: <strong>%{name}</strong> is on <strong>%{domain}</strong>. You can follow or talk with this account if you own an account on any instantiation. If you don't, you can <a href="%{sign_up_path}">sign up</a>.
   media_attachments:
     validations:
-      images_and_video: Cannot attach a video to a status that already contains images
-      too_many: Cannot attach more than 4 files
+      images_and_video: Cannot attach a vid to a status that contains photos
+      too_many: You may only attach up to 4 things
   notification_mailer:
     digest:
-      body: 'Here is a brief summary of what you missed on %{instance} since your last visit on %{since}:'
-      mention: "%{name} mentioned you in:"
+      body: 'This is a summary of activity you did not catch on %{instance} following your last visit on %{since}:'
+      mention: "You got a tag by %{name} in:"
       new_followers_summary:
-        one: You have acquired one new follower! Yay!
-        other: You have gotten %{count} new followers! Amazing!
+        one: You got a follow! Yay!
+        other: You got %{count} follows! Amazing!
       subject:
-        one: "1 new notification since your last visit \U0001F418"
-        other: "%{count} new notifications since your last visit \U0001F418"
+        one: "1 notification following your last visit \U0001F418"
+        other: "%{count} notifications following your last visit \U0001F418"
     favourite:
-      body: 'Your status was favourited by %{name}:'
-      subject: "%{name} favourited your status"
+      body: 'Your status got a star from %{name}:'
+      subject: "%{name} put a star on your status"
     follow:
       body: "%{name} is now following you!"
       subject: "%{name} is now following you"
     follow_request:
-      body: "%{name} has requested to follow you"
-      subject: 'Pending follower: %{name}'
+      body: "%{name} wants to follow you"
+      subject: "Follow awaiting confirmation: %{name}"
     mention:
-      body: 'You were mentioned by %{name} in:'
-      subject: You were mentioned by %{name}
+      body: "You got a tag by %{name} in:"
+      subject: "You got a tag from %{name}"
     reblog:
-      body: 'Your status was boosted by %{name}:'
-      subject: "%{name} boosted your status"
+      body: "Your status got a boost from %{name}:"
+      subject: "Your status got a boost from %{name}"
   pagination:
-    next: Next
+    next: Forward
     prev: Prev
     truncate: "&hellip;"
   remote_follow:
-    acct: Enter your username@domain you want to follow from
-    missing_resource: Could not find the required redirect URL for your account
-    proceed: Proceed to follow
-    prompt: 'You are going to follow:'
+    acct: Add your alias@domain you want to follow from
+    missing_resource: Could not find mandatory URL for your account
+    proceed: Go to follow
+    prompt: 'Do you want to follow:'
   settings:
-    authorized_apps: Authorized apps
+    authorized_apps: Apps with authorization
     back: Back to Mastodon
-    edit_profile: Edit profile
-    export: Data export
+    edit_profile: Modify biography
+    export: Data download
     import: Import
-    preferences: Preferences
-    settings: Settings
-    two_factor_auth: Two-factor Authentication
+    preferences: Options
+    settings: Configuration
+    two_factor_auth: Two-factor Login
   statuses:
-    open_in_web: Open in web
-    over_character_limit: character limit of %{max} exceeded
-    show_more: Show more
+    open_in_web: Go to http location
+    over_character_limit: past symbol limit of %{max}
+    show_more: Show additional
     visibilities:
-      private: Only show to followers
+      private: Only show to accounts who follow you
       public: Public
-      unlisted: Public, but do not display on the public timeline
+      unlisted: Public, but will not display in a public activity list
   stream_entries:
     click_to_show: Click to show
-    reblogged: boosted
-    sensitive_content: Sensitive content
+    reblogged: boosts
+    sensitive_content: Tricky
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
   two_factor_auth:
-    code_hint: Enter the code generated by your authenticator app to confirm
-    description_html: If you enable <strong>two-factor authentication</strong>, logging in will require you to be in possession of your phone, which will generate tokens for you to enter.
-    disable: Disable
-    enable: Enable
-    enabled_success: Two-factor authentication successfully enabled
-    generate_recovery_codes: Generate Recovery Codes
-    instructions_html: "<strong>Scan this QR code into Google Authenticator or a similiar TOTP app on your phone</strong>. From now on, that app will generate tokens that you will have to enter when logging in."
+    code_hint: Submit digits that your auth app displays to confirm
+    description_html: If you allow <strong>two-factor login</strong>, a string of digits will go to you via sms or an auth app, which you will add to your login form.
+    disable: Disallow
+    enable: Allow
+    enabled_success: Your two-factor login took!
+    generate_recovery_codes: Build backup strings
+    instructions_html: "<strong>Scan this QR visual into an app</strong>. From now on, that app will know your string of digits for login."
     lost_recovery_codes: Recovery codes allow you to regain access to your account if you lose your phone. If you've lost your recovery codes, you can regenerate them here. Your old recovery codes will be invalidated.
-    manual_instructions: 'If you can''t scan the QR code and need to enter it manually, here is the plain-text secret:'
+    manual_instructions: 'If you can''t scan this QR visual and must add it manually, this is a plain string of it:'
     recovery_codes_regenerated: Recovery codes successfully regenerated
     recovery_instructions: If you ever lose access to your phone, you can use one of the recovery codes below to regain access to your account. Keep the recovery codes safe, for example by printing them and storing them with other important documents.
-    setup: Set up
-    wrong_code: The entered code was invalid! Are server time and device time correct?
+    setup: Start up
+    wrong_code: You put in an invalid auth string. Is your clock working?
   users:
-    invalid_email: The e-mail address is invalid
-    invalid_otp_token: Invalid two-factor code
+    invalid_email: That mail is invalid
+    invalid_otp_token: Invalid two-factor digits

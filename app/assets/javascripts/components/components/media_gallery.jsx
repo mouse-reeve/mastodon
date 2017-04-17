@@ -5,7 +5,7 @@ import { defineMessages, injectIntl, FormattedMessage } from 'react-intl';
 import { isIOS } from '../is_mobile';
 
 const messages = defineMessages({
-  toggle_visible: { id: 'media_gallery.toggle_visible', defaultMessage: 'Toggle visibility' }
+  toggle_visible: { id: 'media_gallery.toggle_visible', defaultMessage: 'Switch visibility' }
 });
 
 const outerStyle = {
@@ -214,15 +214,15 @@ const MediaGallery = React.createClass({
       let warning;
 
       if (sensitive) {
-        warning = <FormattedMessage id='status.sensitive_warning' defaultMessage='Sensitive content' />;
+        warning = <FormattedMessage id='status.sensitive_warning' defaultMessage='Tricky topic' />;
       } else {
-        warning = <FormattedMessage id='status.media_hidden' defaultMessage='Media hidden' />;
+        warning = <FormattedMessage id='status.media_hidden' defaultMessage='Visuals not shown' />;
       }
 
       children = (
         <div role='button' tabIndex='0' style={spoilerStyle} className='media-spoiler' onClick={this.handleOpen}>
           <span style={spoilerSpanStyle}>{warning}</span>
-          <span style={spoilerSubSpanStyle}><FormattedMessage id='status.sensitive_toggle' defaultMessage='Click to view' /></span>
+          <span style={spoilerSubSpanStyle}><FormattedMessage id='status.sensitive_toggle' defaultMessage='Click to look' /></span>
         </div>
       );
     } else {

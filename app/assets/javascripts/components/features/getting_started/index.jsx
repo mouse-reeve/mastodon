@@ -6,16 +6,16 @@ import { connect } from 'react-redux';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
 const messages = defineMessages({
-  heading: { id: 'getting_started.heading', defaultMessage: 'Getting started' },
-  public_timeline: { id: 'navigation_bar.public_timeline', defaultMessage: 'Federated timeline' },
-  community_timeline: { id: 'navigation_bar.community_timeline', defaultMessage: 'Local timeline' },
-  preferences: { id: 'navigation_bar.preferences', defaultMessage: 'Preferences' },
-  follow_requests: { id: 'navigation_bar.follow_requests', defaultMessage: 'Follow requests' },
+  heading: { id: 'getting_started.heading', defaultMessage: 'Start' },
+  public_timeline: { id: 'navigation_bar.public_timeline', defaultMessage: 'Global activity' },
+  community_timeline: { id: 'navigation_bar.community_timeline', defaultMessage: 'Community activity' },
+  preferences: { id: 'navigation_bar.preferences', defaultMessage: 'Config' },
+  follow_requests: { id: 'navigation_bar.follow_requests', defaultMessage: 'Asks to follow' },
   sign_out: { id: 'navigation_bar.logout', defaultMessage: 'Logout' },
-  favourites: { id: 'navigation_bar.favourites', defaultMessage: 'Favourites' },
-  blocks: { id: 'navigation_bar.blocks', defaultMessage: 'Blocked users' },
-  mutes: { id: 'navigation_bar.mutes', defaultMessage: 'Muted users' },
-  info: { id: 'navigation_bar.info', defaultMessage: 'Extended information' }
+  favourites: { id: 'navigation_bar.favourites', defaultMessage: 'Stars' },
+  blocks: { id: 'navigation_bar.blocks', defaultMessage: 'Block list' },
+  mutes: { id: 'navigation_bar.mutes', defaultMessage: 'Accounts not shown' },
+  info: { id: 'navigation_bar.info', defaultMessage: 'Additional information' }
 });
 
 const mapStateToProps = state => ({
@@ -45,7 +45,7 @@ const GettingStarted = ({ intl, me }) => {
 
       <div className='scrollable optionally-scrollable' style={{ display: 'flex', flexDirection: 'column' }}>
         <div className='static-content getting-started'>
-          <p><FormattedMessage id='getting_started.open_source_notice' defaultMessage='Mastodon is open source software. You can contribute or report issues on GitHub at {github}. {apps}.' values={{ github: <a href="https://github.com/tootsuite/mastodon" target="_blank">tootsuite/mastodon</a>, apps: <a href="https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md" target="_blank"><FormattedMessage id='getting_started.apps' defaultMessage='Various apps are available' /></a> }} /></p>
+          <p><FormattedMessage id='getting_started.open_source_notice' defaultMessage='Mastodon is \"FOSS\". You can add contributions or log a bug on GitHub at {github}. {apps}.' values={{ github: <a href="https://github.com/tootsuite/mastodon" target="_blank">tootsuite/mastodon</a>, apps: <a href="https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md" target="_blank"><FormattedMessage id='getting_started.apps' defaultMessage='You can find various apps to try' /></a> }} /></p>
         </div>
       </div>
     </Column>

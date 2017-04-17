@@ -7,7 +7,7 @@ import ColumnSettingsContainer from './containers/column_settings_container';
 import { Link } from 'react-router';
 
 const messages = defineMessages({
-  title: { id: 'column.home', defaultMessage: 'Home' }
+  title: { id: 'column.home', defaultMessage: 'Origin' }
 });
 
 const mapStateToProps = state => ({
@@ -29,7 +29,7 @@ const HomeTimeline = React.createClass({
     return (
       <Column icon='home' active={hasUnread} heading={intl.formatMessage(messages.title)}>
         <ColumnSettingsContainer />
-        <StatusListContainer {...this.props} type='home' emptyMessage={<FormattedMessage id='empty_column.home' defaultMessage="You aren't following anyone yet. Visit {public} or use search to get started and meet other users." values={{ public: <Link to='/timelines/public'><FormattedMessage id='empty_column.home.public_timeline' defaultMessage='the public timeline' /></Link> }} />} />
+        <StatusListContainer {...this.props} type='home' emptyMessage={<FormattedMessage id='empty_column.home' defaultMessage="You don't follow any accounts right now. Visit {public} or try inquiry to start out and find folks to talk to." values={{ public: <Link to='/timelines/public'><FormattedMessage id='empty_column.home.public_timeline' defaultMessage='public activity' /></Link> }} />} />
       </Column>
     );
   },

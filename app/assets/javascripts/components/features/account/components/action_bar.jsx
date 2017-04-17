@@ -5,16 +5,16 @@ import { Link } from 'react-router';
 import { defineMessages, injectIntl, FormattedMessage, FormattedNumber } from 'react-intl';
 
 const messages = defineMessages({
-  mention: { id: 'account.mention', defaultMessage: 'Mention @{name}' },
-  edit_profile: { id: 'account.edit_profile', defaultMessage: 'Edit profile' },
+  mention: { id: 'account.mention', defaultMessage: 'Tag @{name}' },
+  edit_profile: { id: 'account.edit_profile', defaultMessage: 'Modify bio' },
   unblock: { id: 'account.unblock', defaultMessage: 'Unblock @{name}' },
   unfollow: { id: 'account.unfollow', defaultMessage: 'Unfollow' },
-  unmute: { id: 'account.unmute', defaultMessage: 'Unmute @{name}' },
+  unmute: { id: 'account.unmute', defaultMessage: 'Show @{name}' },
   block: { id: 'account.block', defaultMessage: 'Block @{name}' },
-  mute: { id: 'account.mute', defaultMessage: 'Mute @{name}' },
+  mute: { id: 'account.mute', defaultMessage: "Don't show @{name}" },
   follow: { id: 'account.follow', defaultMessage: 'Follow' },
-  report: { id: 'account.report', defaultMessage: 'Report @{name}' },
-  disclaimer: { id: 'account.disclaimer', defaultMessage: 'This user is from another instance. This number may be larger.' }
+  report: { id: 'account.report', defaultMessage: 'Flag @{name}' },
+  disclaimer: { id: 'account.disclaimer', defaultMessage: 'This account is not from this instantiation. This count may vary..' }
 });
 
 const outerDropdownStyle = {
@@ -92,7 +92,7 @@ const ActionBar = React.createClass({
           </Link>
 
           <Link className='account__action-bar__tab' to={`/accounts/${account.get('id')}/followers`}>
-            <span><FormattedMessage id='account.followers' defaultMessage='Followers' /></span>
+            <span><FormattedMessage id='account.followers' defaultMessage='Accounts following' /></span>
             <strong><FormattedNumber value={account.get('followers_count')} /> {extraInfo}</strong>
           </Link>
         </div>

@@ -14,7 +14,7 @@ import ColumnBackButtonSlim from '../../components/column_back_button_slim';
 import createStream from '../../stream';
 
 const messages = defineMessages({
-  title: { id: 'column.public', defaultMessage: 'Federated timeline' }
+  title: { id: 'column.public', defaultMessage: 'Global Activity' }
 });
 
 const mapStateToProps = state => ({
@@ -87,7 +87,7 @@ const PublicTimeline = React.createClass({
     return (
       <Column icon='globe' active={hasUnread} heading={intl.formatMessage(messages.title)}>
         <ColumnBackButtonSlim />
-        <StatusListContainer type='public' emptyMessage={<FormattedMessage id='empty_column.public' defaultMessage='There is nothing here! Write something publicly, or manually follow users from other instances to fill it up' />} />
+        <StatusListContainer type='public' emptyMessage={<FormattedMessage id='empty_column.public' defaultMessage='Sory, nothing in this spot right now! Post publicly, or manually follow accounts from various instantiations to fill it up' />} />
       </Column>
     );
   },

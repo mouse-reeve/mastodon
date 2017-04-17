@@ -4,13 +4,13 @@ import IconButton from '../../../components/icon_button';
 
 const messages = defineMessages({
   public_short: { id: 'privacy.public.short', defaultMessage: 'Public' },
-  public_long: { id: 'privacy.public.long', defaultMessage: 'Post to public timelines' },
-  unlisted_short: { id: 'privacy.unlisted.short', defaultMessage: 'Unlisted' },
-  unlisted_long: { id: 'privacy.unlisted.long', defaultMessage: 'Do not show in public timelines' },
-  private_short: { id: 'privacy.private.short', defaultMessage: 'Private' },
-  private_long: { id: 'privacy.private.long', defaultMessage: 'Post to followers only' },
-  direct_short: { id: 'privacy.direct.short', defaultMessage: 'Direct' },
-  direct_long: { id: 'privacy.direct.long', defaultMessage: 'Post to mentioned users only' },
+  public_long: { id: 'privacy.public.long', defaultMessage: 'Post to public activity list' },
+  unlisted_short: { id: 'privacy.unlisted.short', defaultMessage: 'No listing' },
+  unlisted_long: { id: 'privacy.unlisted.long', defaultMessage: 'Do not show in public activity list' },
+  private_short: { id: 'privacy.private.short', defaultMessage: 'Privy' },
+  private_long: { id: 'privacy.private.long', defaultMessage: 'Post to accounts who follow you only' },
+  direct_short: { id: 'privacy.direct.short', defaultMessage: 'DM' },
+  direct_long: { id: 'privacy.direct.long', defaultMessage: 'Post to accounts you tag only' },
   change_privacy: { id: 'privacy.change', defaultMessage: 'Adjust status privacy' }
 });
 

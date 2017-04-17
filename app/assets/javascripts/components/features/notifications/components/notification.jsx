@@ -27,7 +27,7 @@ const Notification = React.createClass({
             <i className='fa fa-fw fa-user-plus' />
           </div>
 
-          <FormattedMessage id='notification.follow' defaultMessage='{name} followed you' values={{ name: link }} />
+          <FormattedMessage id='notification.follow' defaultMessage='{name} is now following you' values={{ name: link }} />
         </div>
 
         <AccountContainer id={account.get('id')} withNote={false} />
@@ -47,7 +47,7 @@ const Notification = React.createClass({
             <i className='fa fa-fw fa-star' style={{ color: '#ca8f04' }} />
           </div>
 
-          <FormattedMessage id='notification.favourite' defaultMessage='{name} favourited your status' values={{ name: link }} />
+          <FormattedMessage id='notification.favourite' defaultMessage='your status got a star from {name}' values={{ name: link }} />
         </div>
 
         <StatusContainer id={notification.get('status')} muted={true} />
@@ -63,7 +63,7 @@ const Notification = React.createClass({
             <i className='fa fa-fw fa-retweet' />
           </div>
 
-          <FormattedMessage id='notification.reblog' defaultMessage='{name} boosted your status' values={{ name: link }} />
+          <FormattedMessage id='notification.reblog' defaultMessage='your status got a boost from {name}' values={{ name: link }} />
         </div>
 
         <StatusContainer id={notification.get('status')} muted={true} />
