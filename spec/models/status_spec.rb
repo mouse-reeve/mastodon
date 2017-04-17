@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Status, type: :model do
-  let(:mus) { Fabricate(:account, username: 'mus') }
+  let(:alice) { Fabricate(:account, username: 'alice') }
   let(:bob)   { Fabricate(:account, username: 'bob') }
   let(:other) { Fabricate(:status, account: bob, text: 'Skulls for the skull god! The enemy\'s gates are sideways!')}
 
-  subject { Fabricate(:status, account: mus) }
+  subject { Fabricate(:status, account: alice) }
 
   describe '#local?' do
     it 'returns true when no remote URI is set' do
@@ -93,7 +93,7 @@ RSpec.describe Status, type: :model do
   describe '#reblogs_count' do
     it 'is the number of reblogs' do
       Fabricate(:status, account: bob, reblog: subject)
-      Fabricate(:status, account: mus, reblog: subject)
+      Fabricate(:status, account: alice, reblog: subject)
 
       expect(subject.reblogs_count).to eq 2
     end
@@ -102,7 +102,7 @@ RSpec.describe Status, type: :model do
   describe '#favourites_count' do
     it 'is the number of favorites' do
       Fabricate(:favourite, account: bob, status: subject)
-      Fabricate(:favourite, account: mus, status: subject)
+      Fabricate(:favourite, account: alice, status: subject)
 
       expect(subject.favourites_count).to eq 2
     end

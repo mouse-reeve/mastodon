@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe NotificationMailer, type: :mailer do
-  let(:receiver)       { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
+  let(:receiver)       { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
   let(:sender)         { Fabricate(:account, username: 'bob') }
   let(:foreign_status) { Fabricate(:status, account: sender) }
   let(:own_status)     { Fabricate(:status, account: receiver.account) }
@@ -11,12 +11,12 @@ RSpec.describe NotificationMailer, type: :mailer do
     let(:mail) { NotificationMailer.mention(receiver.account, Notification.create!(account: receiver.account, activity: mention)) }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("You got a tag from bob")
+      expect(mail.subject).to eq("You were mentioned by bob")
       expect(mail.to).to eq([receiver.email])
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("You got a tag by bob in")
+      expect(mail.body.encoded).to match("You were mentioned by bob")
     end
   end
 
@@ -39,12 +39,12 @@ RSpec.describe NotificationMailer, type: :mailer do
     let(:mail) { NotificationMailer.favourite(own_status.account, Notification.create!(account: receiver.account, activity: favourite)) }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("bob put a star on your status")
+      expect(mail.subject).to eq("bob favourited your status")
       expect(mail.to).to eq([receiver.email])
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("Your status got a star from bob")
+      expect(mail.body.encoded).to match("Your status was favourited by bob")
     end
   end
 
@@ -53,12 +53,12 @@ RSpec.describe NotificationMailer, type: :mailer do
     let(:mail) { NotificationMailer.reblog(own_status.account, Notification.create!(account: receiver.account, activity: reblog)) }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("Your status got a boost from bob")
+      expect(mail.subject).to eq("bob boosted your status")
       expect(mail.to).to eq([receiver.email])
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("Your status got a boost from bob")
+      expect(mail.body.encoded).to match("Your status was boosted by bob")
     end
   end
 

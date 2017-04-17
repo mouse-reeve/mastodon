@@ -50,7 +50,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  let(:account) { Fabricate(:account, username: 'mus') }
+  let(:account) { Fabricate(:account, username: 'alice') }
   let(:password) { 'abcd1234' }
 
   describe 'blacklist' do

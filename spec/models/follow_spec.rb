@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Follow, type: :model do
-  let(:mus) { Fabricate(:account, username: 'mus') }
+  let(:alice) { Fabricate(:account, username: 'alice') }
   let(:bob)   { Fabricate(:account, username: 'bob') }
 
-  subject { Follow.new(account: mus, target_account: bob) }
+  subject { Follow.new(account: alice, target_account: bob) }
 
   describe 'validations' do
     it 'has a valid fabricator' do

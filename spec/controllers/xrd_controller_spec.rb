@@ -11,10 +11,10 @@ RSpec.describe XrdController, type: :controller do
   end
 
   describe 'GET #webfinger' do
-    let(:mus) { Fabricate(:account, username: 'mus') }
+    let(:alice) { Fabricate(:account, username: 'alice') }
 
     it 'returns http success when account can be found' do
-      get :webfinger, params: { resource: mus.to_webfinger_s }, format: :json
+      get :webfinger, params: { resource: alice.to_webfinger_s }, format: :json
       expect(response).to have_http_status(:success)
     end
 

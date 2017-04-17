@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProcessInteractionService do
-  let(:receiver) { Fabricate(:user, email: 'mus@example.com', account: Fabricate(:account, username: 'mus')).account }
+  let(:receiver) { Fabricate(:user, email: 'alice@example.com', account: Fabricate(:account, username: 'alice')).account }
   let(:sender)   { Fabricate(:user, email: 'bob@example.com', account: Fabricate(:account, username: 'bob')).account }
 
   subject { ProcessInteractionService.new }
@@ -39,8 +39,8 @@ XML
       payload = <<XML
 <entry xmlns="http://www.w3.org/2005/Atom" xmlns:activity="http://activitystrea.ms/spec/1.0/">
   <author>
-    <name>mus</name>
-    <uri>https://cb6e6126.ngrok.io/users/mus</uri>
+    <name>alice</name>
+    <uri>https://cb6e6126.ngrok.io/users/alice</uri>
   </author>
 
   <id>someIdHere</id>
@@ -69,8 +69,8 @@ XML
       payload = <<XML
 <entry xmlns="http://www.w3.org/2005/Atom" xmlns:activity="http://activitystrea.ms/spec/1.0/">
   <author>
-    <name>mus</name>
-    <uri>https://cb6e6126.ngrok.io/users/mus</uri>
+    <name>alice</name>
+    <uri>https://cb6e6126.ngrok.io/users/alice</uri>
   </author>
 
   <id>someIdHere</id>
