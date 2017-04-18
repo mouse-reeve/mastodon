@@ -30,6 +30,7 @@ class Status < ApplicationRecord
   validates :uri, uniqueness: true, unless: 'local?'
   validates :text, presence: true, unless: 'reblog?'
   validates_with StatusLengthValidator
+  validates_with Oulipo::Validators::StatusValidator
   validates :reblog, uniqueness: { scope: :account, message: 'of status already exists' }, if: 'reblog?'
 
   default_scope { order('id desc') }

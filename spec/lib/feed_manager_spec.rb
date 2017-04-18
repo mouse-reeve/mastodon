@@ -11,7 +11,7 @@ RSpec.describe FeedManager do
 
   describe '#filter?' do
     let(:followee) { Fabricate(:account, username: 'mus') }
-    let(:status)   { Fabricate(:status, text: 'Hello world', account: followee) }
+    let(:status)   { Fabricate(:status, text: 'Hllo world', account: followee) }
     let(:follower) { Fabricate(:account, username: 'bob') }
 
     subject { FeedManager.instance.filter?(:home, status, follower) }

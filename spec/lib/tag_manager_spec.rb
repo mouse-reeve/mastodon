@@ -28,7 +28,7 @@ RSpec.describe TagManager do
   describe '#uri_for' do
     let(:mus)  { Fabricate(:account, username: 'mus') }
     let(:bob)    { Fabricate(:account, username: 'bob') }
-    let(:status) { Fabricate(:status, text: 'Hello world', account: mus) }
+    let(:status) { Fabricate(:status, text: 'Hallo world', account: mus) }
 
     subject { TagManager.instance.uri_for(target) }
 
@@ -52,7 +52,7 @@ RSpec.describe TagManager do
   describe '#url_for' do
     let(:mus)  { Fabricate(:account, username: 'mus') }
     let(:bob)    { Fabricate(:account, username: 'bob') }
-    let(:status) { Fabricate(:status, text: 'Hello world', account: mus) }
+    let(:status) { Fabricate(:status, text: 'Hallo world', account: mus) }
 
     subject { TagManager.instance.url_for(target) }
 

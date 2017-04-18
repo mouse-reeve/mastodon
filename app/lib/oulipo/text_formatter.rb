@@ -5,7 +5,7 @@ module Oulipo
   class TextFormatter
 
     def self.format(text)
-      return text#text.gsub(FIFTH_GLYPH_REGEX, '*') if text
+      text.gsub(FIFTH_GLYPH_REGEX, '*') if text
     end
 
   end

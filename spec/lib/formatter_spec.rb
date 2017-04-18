@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Formatter do
   let(:account)       { Fabricate(:account, username: 'mus') }
-  let(:local_status)  { Fabricate(:status, text: 'Hello world http://google.com', account: account) }
+  let(:local_status)  { Fabricate(:status, text: 'Hallo world http://google.com', account: account) }
   let(:remote_status) { Fabricate(:status, text: '<script>alert("Hello")</script> Beep boop', uri: 'beepboop', account: account) }
 
   describe '#format' do
@@ -13,7 +13,7 @@ RSpec.describe Formatter do
     end
 
     it 'contains plain text' do
-      expect(subject).to match('Hello world')
+      expect(subject).to match('Hallo world')
     end
 
     it 'contains a link' do
