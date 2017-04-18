@@ -5,7 +5,6 @@ class SearchService < BaseService
     results = { accounts: [], hashtags: [], statuses: [] }
 
     return results if query.blank?
-    raise Mastodon::ValidationError, 'Invalid symbol' if query.include? 'e'
 
     if query =~ /\Ahttps?:\/\//
       resource = FetchRemoteResourceService.new.call(query)
