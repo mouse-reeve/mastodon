@@ -83,3 +83,6 @@ require 'sidekiq/testing'
 Sidekiq::Testing.inline!
 
 ActiveRecordQueryTrace.enabled = ENV.fetch('QUERY_TRACE_ENABLED') { false }
+
+require 'oulipo/oulipo'
+Oulipo.set_invalid_glyphs!(Oulipo::FIFTH_GLYPH_REGEX)

@@ -10,7 +10,7 @@ class Account < ApplicationRecord
   has_one :user, inverse_of: :account
   validates :username, presence: true, format: { with: /\A[a-z0-9_]+\z/i, message: 'only a-z, 0-9 and _ symbols' }, uniqueness: { scope: :domain, case_sensitive: false }, length: { maximum: 30 }, if: 'local?'
   validates :username, presence: true, uniqueness: { message: 'alias not vacant', scope: :domain, case_sensitive: true }, unless: 'local?'
-  validates :username, format: { with: /\A[^eE]+\z/, message: "not that fifth symbol" }, if: 'local?'
+  validates :username, format: { without: Oulipo.invalid_glyphs_regex, message: "not that fifth symbol" }, if: 'local?'
 
   # Avatar upload
   has_attached_file :avatar, styles: ->(f) { avatar_styles(f) }, convert_options: { all: '-quality 80 -strip' }
@@ -24,9 +24,9 @@ class Account < ApplicationRecord
 
   # Local user profile validations
   validates :display_name, length: { maximum: 30 }, if: 'local?'
-  validates :display_name, format: { with: /\A[^eE]+\z|\A\z/, message: "not that fifth symbol" }, if: 'local?'
+  validates :display_name, format: { without: Oulipo.invalid_glyphs_regex, message: "not that fifth symbol" }, if: 'local?'
   validates :note, length: { maximum: 160 }, if: 'local?'
-  validates :note, format: { with: /\A[^eE]+\z|\A\z/, message: "not that fifth symbol" }, if: 'local?'
+  validates :note, format: { without: Oulipo.invalid_glyphs_regex, message: "not that fifth symbol" }, if: 'local?'
 
   # Timelines
   has_many :stream_entries, inverse_of: :account, dependent: :destroy
