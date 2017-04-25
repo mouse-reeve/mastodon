@@ -3,7 +3,7 @@ en-OU:
   activerecord:
     errors:
       messages:
-        record_invalid: "Invalid: %{errors}"
+        record_invalid: "Validation did not pass: %{errors}"
     attributes:
       status:
         text: Status
