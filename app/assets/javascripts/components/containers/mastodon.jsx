@@ -56,6 +56,7 @@ import ru from 'react-intl/locale-data/ru';
 import uk from 'react-intl/locale-data/uk';
 import zh from 'react-intl/locale-data/zh';
 import bg from 'react-intl/locale-data/bg';
+import en_ou from '../locales/en-ou';
 import { localeData as zh_hk } from '../locales/zh-hk';
 import getMessagesForLocale from '../locales';
 import { hydrateStore } from '../actions/store';
@@ -70,6 +71,7 @@ const browserHistory = useRouterHistory(createBrowserHistory)({
 });
 
 addLocaleData([
+  ...en_ou,
   ...en,
   ...de,
   ...eo,

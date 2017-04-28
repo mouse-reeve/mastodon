@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::StatusesController, type: :controller do
   render_views
 
-  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
+  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
   let(:app)   { Fabricate(:application, name: 'Test app', website: 'http://testapp.com') }
   let(:token) { double acceptable?: true, resource_owner_id: user.id, application: app }
 
@@ -61,7 +61,7 @@ RSpec.describe Api::V1::StatusesController, type: :controller do
 
   describe 'POST #create' do
     before do
-      post :create, params: { status: 'Hallo world', spoiler_text: '' }
+      post :create, params: { status: 'Hello world' }
     end
 
     it 'returns http success' do

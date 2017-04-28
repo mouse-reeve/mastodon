@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Api::OEmbedController, type: :controller do
-  let(:mus)  { Fabricate(:account, username: 'mus') }
-  let(:status) { Fabricate(:status, text: 'Hallo world', account: mus) }
+  let(:alice)  { Fabricate(:account, username: 'alice') }
+  let(:status) { Fabricate(:status, text: 'Hello world', account: alice) }
 
   describe 'GET #show' do
     before do
-      get :show, params: { url: account_stream_entry_url(mus, status.stream_entry) }, format: :json
+      get :show, params: { url: account_stream_entry_url(alice, status.stream_entry) }, format: :json
     end
 
     it 'returns http success' do

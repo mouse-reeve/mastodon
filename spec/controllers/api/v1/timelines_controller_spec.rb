@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::TimelinesController, type: :controller do
   render_views
 
-  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
+  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
 
   before do
     allow(controller).to receive(:doorkeeper_token) { token }
@@ -28,7 +28,7 @@ RSpec.describe Api::V1::TimelinesController, type: :controller do
 
     describe 'GET #tag' do
       before do
-        PostStatusService.new.call(user.account, 'It is a #trial')
+        PostStatusService.new.call(user.account, 'It is a #test')
       end
 
       it 'returns http success' do

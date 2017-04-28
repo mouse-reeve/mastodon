@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::FollowRequestsController, type: :controller do
   render_views
 
-  let(:user)     { Fabricate(:user, account: Fabricate(:account, username: 'mus', locked: true)) }
+  let(:user)     { Fabricate(:user, account: Fabricate(:account, username: 'alice', locked: true)) }
   let(:token)    { double acceptable?: true, resource_owner_id: user.id }
   let(:follower) { Fabricate(:account, username: 'bob') }
 

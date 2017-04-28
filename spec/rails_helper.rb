@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'webmock/rspec'
 require 'paperclip/matchers'
 require 'capybara/rspec'
+require 'oulipo/oulipo'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe StreamEntry, type: :model do
-  let(:mus)     { Fabricate(:account, username: 'mus') }
+  let(:alice)     { Fabricate(:account, username: 'alice') }
   let(:bob)       { Fabricate(:account, username: 'bob') }
-  let(:status)    { Fabricate(:status, account: mus) }
+  let(:status)    { Fabricate(:status, account: alice) }
   let(:reblog)    { Fabricate(:status, account: bob, reblog: status) }
   let(:reply)     { Fabricate(:status, account: bob, thread: status) }
 

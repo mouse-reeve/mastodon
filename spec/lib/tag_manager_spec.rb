@@ -26,14 +26,14 @@ RSpec.describe TagManager do
   end
 
   describe '#uri_for' do
-    let(:mus)  { Fabricate(:account, username: 'mus') }
+    let(:alice)  { Fabricate(:account, username: 'alice') }
     let(:bob)    { Fabricate(:account, username: 'bob') }
-    let(:status) { Fabricate(:status, text: 'Hallo world', account: mus) }
+    let(:status) { Fabricate(:status, text: 'Hello world', account: alice) }
 
     subject { TagManager.instance.uri_for(target) }
 
     context 'Account' do
-      let(:target) { mus }
+      let(:target) { alice }
 
       it 'returns a string' do
         expect(subject).to be_a String
@@ -50,14 +50,14 @@ RSpec.describe TagManager do
   end
 
   describe '#url_for' do
-    let(:mus)  { Fabricate(:account, username: 'mus') }
+    let(:alice)  { Fabricate(:account, username: 'alice') }
     let(:bob)    { Fabricate(:account, username: 'bob') }
-    let(:status) { Fabricate(:status, text: 'Hallo world', account: mus) }
+    let(:status) { Fabricate(:status, text: 'Hello world', account: alice) }
 
     subject { TagManager.instance.url_for(target) }
 
     context 'Account' do
-      let(:target) { mus }
+      let(:target) { alice }
 
       it 'returns a URL' do
         expect(subject).to be_a String

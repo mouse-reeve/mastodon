@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::NotificationsController, type: :controller do
   render_views
 
-  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
+  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
   let(:token) { double acceptable?: true, resource_owner_id: user.id }
   let(:other) { Fabricate(:user, account: Fabricate(:account, username: 'bob')) }
 
@@ -13,12 +13,12 @@ RSpec.describe Api::V1::NotificationsController, type: :controller do
 
   describe 'GET #index' do
     before do
-      first_status = PostStatusService.new.call(user.account, 'Tst')
+      first_status = PostStatusService.new.call(user.account, 'Test')
       @reblog_of_first_status = ReblogService.new.call(other.account, first_status)
-      mentioning_status = PostStatusService.new.call(other.account, 'Hallo @mus')
+      mentioning_status = PostStatusService.new.call(other.account, 'Hello @alice')
       @mention_from_status = mentioning_status.mentions.first
       @favourite = FavouriteService.new.call(other.account, first_status)
-      @follow = FollowService.new.call(other.account, 'mus')
+      @follow = FollowService.new.call(other.account, 'alice')
     end
 
     describe 'with no options' do
