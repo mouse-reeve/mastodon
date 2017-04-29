@@ -3,7 +3,7 @@ import IconButton from '../../../components/icon_button';
 import { defineMessages, injectIntl } from 'react-intl';
 
 const messages = defineMessages({
-  upload: { id: 'upload_button.label', defaultMessage: 'Add media' }
+  upload: { id: 'upload_button.label', defaultMessage: 'Add photograph, film, or music' }
 });
 
 const iconStyle = {
