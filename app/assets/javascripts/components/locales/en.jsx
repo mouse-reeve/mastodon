@@ -43,7 +43,7 @@ const en = {
   "emoji_button.label": "Add icon",
   "empty_column.community": "No community activity right now. Post a status to start things rolling!",
   "empty_column.hashtag": "Nothing in this hashtag right now.",
-  "empty_column.home.public_timeline": "our community activity",
+  "empty_column.home.public_timeline": "community activity",
   "empty_column.home": "You don't follow anybody right now.. Visit {public} or try inquiry to start out and find accounts to follow.",
   "empty_column.notifications": "No notifications right now. Talk to accounts to start a dialog.",
   "empty_column.public": "No posts right now. Post a status or follow accounts on Mastodon instantitions to fill it up.",
