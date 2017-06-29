@@ -1,4 +1,3 @@
-import en_ou from './en-ou';
 import en from './en';
 import de from './de';
 import es from './es';
@@ -16,7 +15,6 @@ import zh_hk from './zh-hk';
 import bg from './bg';
 
 const locales = {
-  'en-OU': en_ou,
   en,
   de,
   es,

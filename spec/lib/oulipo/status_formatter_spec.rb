@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Oulipo::StatusFormatter do
 
-  before :each do
-    Oulipo.set_invalid_glyphs!(Oulipo::FIFTH_GLYPH_REGEX)
-  end
-
   let(:account)       { Fabricate(:account, username: 'al') }
   let(:simple_status)  { Fabricate.build(:status, text: 'Mice èat chéêsë!', account: account) }
   let(:link_status)  { Fabricate.build(:status, text: 'Lovē this Excėllęnt sitǝ: https://example.com', account: account) }

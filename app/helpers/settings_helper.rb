@@ -2,8 +2,7 @@
 
 module SettingsHelper
   HUMAN_LOCALES = {
-    'en-OU': 'English (Oulipo)',
-    en: 'English',
+    en: 'Oulipo',
     de: 'Deutsch',
     es: 'Español',
     eo: 'Esperanto',

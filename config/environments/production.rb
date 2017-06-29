@@ -122,6 +122,3 @@ Rails.application.configure do
     'X-XSS-Protection'       => '1; mode=block',
   }
 end
-
-require 'oulipo/oulipo'
-Oulipo.set_invalid_glyphs!(Oulipo::FIFTH_GLYPH_REGEX)

@@ -5,7 +5,7 @@ RSpec.describe PostStatusService do
 
   it 'creates a new status' do
     account = Fabricate(:account)
-    text = "test status update"
+    text = "tst status updat"
 
     status = subject.call(account, text)
 
@@ -16,7 +16,7 @@ RSpec.describe PostStatusService do
   it 'creates a new response status' do
     in_reply_to_status = Fabricate(:status)
     account = Fabricate(:account)
-    text = "test status update"
+    text = "tst status updat"
 
     status = subject.call(account, text, in_reply_to_status)
 
@@ -33,7 +33,7 @@ RSpec.describe PostStatusService do
   end
 
   it 'creates a status with spoiler text' do
-    spoiler_text = "spoiler text"
+    spoiler_text = "spoilr txt"
 
     status = create_status_with_options(spoiler_text: spoiler_text)
 
@@ -70,7 +70,7 @@ RSpec.describe PostStatusService do
     allow(ProcessMentionsService).to receive(:new).and_return(mention_service)
     account = Fabricate(:account)
 
-    status = subject.call(account, "test status update")
+    status = subject.call(account, "tst status updat")
 
     expect(ProcessMentionsService).to have_received(:new)
     expect(mention_service).to have_received(:call).with(status)
@@ -82,7 +82,7 @@ RSpec.describe PostStatusService do
     allow(ProcessHashtagsService).to receive(:new).and_return(hashtags_service)
     account = Fabricate(:account)
 
-    status = subject.call(account, "test status update")
+    status = subject.call(account, "tst status updat")
 
     expect(ProcessHashtagsService).to have_received(:new)
     expect(hashtags_service).to have_received(:call).with(status)
@@ -93,7 +93,7 @@ RSpec.describe PostStatusService do
     allow(Pubsubhubbub::DistributionWorker).to receive(:perform_async)
     account = Fabricate(:account)
 
-    status = subject.call(account, "test status update")
+    status = subject.call(account, "tst status updat")
 
     expect(DistributionWorker).to have_received(:perform_async).with(status.id)
     expect(Pubsubhubbub::DistributionWorker).
@@ -104,7 +104,7 @@ RSpec.describe PostStatusService do
     allow(LinkCrawlWorker).to receive(:perform_async)
     account = Fabricate(:account)
 
-    status = subject.call(account, "test status update")
+    status = subject.call(account, "tst status updat")
 
     expect(LinkCrawlWorker).to have_received(:perform_async).with(status.id)
   end
@@ -115,7 +115,7 @@ RSpec.describe PostStatusService do
 
     status = subject.call(
       account,
-      "test status update",
+      "tst status updat",
       nil,
       media_ids: [media.id],
     )
@@ -129,7 +129,7 @@ RSpec.describe PostStatusService do
     expect do
       subject.call(
         account,
-        "test status update",
+        "tst status updat",
         nil,
         media_ids: [
           Fabricate(:media_attachment, account: account),
@@ -151,7 +151,7 @@ RSpec.describe PostStatusService do
     expect do
       subject.call(
         account,
-        "test status update",
+        "tst status updat",
         nil,
         media_ids: [
           Fabricate(:media_attachment, type: :video, account: account),
@@ -165,6 +165,6 @@ RSpec.describe PostStatusService do
   end
 
   def create_status_with_options(options = {})
-    subject.call(Fabricate(:account), "test", nil, options)
+    subject.call(Fabricate(:account), "tst", nil, options)
   end
 end

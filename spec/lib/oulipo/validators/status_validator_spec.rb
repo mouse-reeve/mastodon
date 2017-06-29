@@ -3,14 +3,6 @@ require 'rails_helper'
 RSpec.describe Oulipo::Validators::StatusValidator do
   let(:account)       { Fabricate(:account, username: 'mus') }
 
-  before :each do
-    Oulipo.set_invalid_glyphs!(Oulipo::FIFTH_GLYPH_REGEX)
-  end
-
-  after :each do
-    Oulipo.set_invalid_glyphs!(/(?=a)b/)
-  end
-
   describe 'invalid text' do
     subject  { Fabricate.build(:status, text: 'Treebeard is the eldest Ent!', account: account) }
 
@@ -49,6 +41,14 @@ RSpec.describe Oulipo::Validators::StatusValidator do
     subject { Fabricate.build(:status, text: '@ecmendenhall@party.personal.pizza', account: account) }
 
     it 'ignores invalid glyphs in mentions' do
+      expect(subject.valid?).to eq(true)
+    end
+  end
+
+  describe 'statuses with emoji' do
+    subject { Fabricate.build(:status, text: ':heart_eyes_cat:', account: account) }
+
+    it 'ignores invalid glyphs in emoji' do
       expect(subject.valid?).to eq(true)
     end
   end

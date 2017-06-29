@@ -23,7 +23,6 @@ RSpec.configure do |config|
 
   config.before :each do
     stub_request(:post, 'https://fcm.googleapis.com/fcm/send').to_return(status: 200, body: '')
-    Oulipo.set_invalid_glyphs!(/.^/)
   end
 
   config.after :suite do
