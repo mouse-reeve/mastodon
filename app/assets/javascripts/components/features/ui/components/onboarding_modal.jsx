@@ -26,7 +26,7 @@ const PageOne = ({ acct, domain }) => (
     <div>
       <h1><FormattedMessage id='onboarding.page_one.welcome' defaultMessage='Hi, you found Oulipo Mastodon!' /></h1>
       <p><FormattedMessage id='onboarding.page_one.federation' defaultMessage='Mastodon is a social hub that for all.' /></p>
-      <p><FormattedMessage id='onboarding.page_one.handle' defaultMessage='This is {domain}, an instantiaion among many Mastodon instantiations. Your full alias is {handle}' values={{ domain, handle: <strong>{acct}@{domain}</strong> }}/></p>
+      <p><FormattedMessage id='onboarding.page_one.handle' defaultMessage='This is {domain}, an instantiation among many Mastodon instantiations. Your full alias is {handle}' values={{ domain, handle: <strong>{acct}@{domain}</strong> }}/></p>
     </div>
   </div>
 );
