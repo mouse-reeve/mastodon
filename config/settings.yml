@@ -7,7 +7,7 @@
 # For more information, see docs/Running-Mastodon/Administration-guide.md
 #
 defaults: &defaults
-  site_title: 'Oulipostodon'
+  site_title: Oulipostodon
   site_description: 'A Dcntralizd and Fdratd Social Ntwork'
   site_extended_description: |
     <p>Oulipo.social is a lipogrammatic Mastodon for all. This social contract is an adaptation from <a href="https://mastodon.social/about/more">Mastadon.social</a>.</p>
@@ -54,11 +54,25 @@ defaults: &defaults
     </ol>
 
     <p>All this notwithstanding, administrators of oulipo.social can ban any accounts, at any point, for any motivation, if not in violation of law.</p>
+
+  site_terms: ''
   site_contact_username: 'mus'
   site_contact_email: 'mousereeve@riseup.net'
   open_registrations: true
   closed_registrations_message: ''
+  open_deletion: true
+  min_invite_role: 'admin'
+  timeline_preview: true
+  show_staff_badge: true
+  default_sensitive: false
+  unfollow_modal: false
   boost_modal: false
+  delete_modal: true
+  auto_play_gif: false
+  reduce_motion: false
+  system_font_ui: false
+  noindex: false
+  theme: 'default'
   notification_emails:
     follow: false
     reblog: false
@@ -69,7 +83,17 @@ defaults: &defaults
   interactions:
     must_be_follower: false
     must_be_following: false
-
+    must_be_following_dm: false
+  reserved_usernames:
+    - admin
+    - support
+    - help
+    - root
+    - webmaster
+    - administrator
+  bootstrap_timeline_accounts: ''
+  activity_api_enabled: true
+  peers_api_enabled: true
 development:
   <<: *defaults
 

@@ -4,15 +4,23 @@ en:
     hints:
       defaults:
         avatar: PNG, GIF or JPG. At most 2MB. Will automatically shift down to 120x120px
-        display_name: At most 30 symbols
-
+        digest: Only following a long gap of inactivity and only if you got any tags and DMs during that gap
+        display_name:
+          one: <span class="name-counter">1</span> additional symbol
+          other: <span class="name-counter">%{count}</span> additional symbols
         header: PNG, GIF or JPG. At most 2MB. Will automatically shift down to 700x335px
         locked: You must manually allow follows and post privacy to accounts who follow you only is standard
-        note: At most 160 symbols
+        note:
+          one: <span class="note-counter">1</span> additional symbols
+          other: <span class="note-counter">%{count}</span> additional symbols
+        setting_noindex: Impacts your public bio and status spot
+        setting_theme: Impacts how Mastodon looks if you log in from any app.
       imports:
         data: CSV download from a Mastodon instantiation
       sessions:
         otp: Add Two-factor string or a backup string.
+      user:
+        filtered_languages: Localizations you pick will not show up on your public activity list
     labels:
       defaults:
         avatar: Avatar
@@ -20,23 +28,36 @@ en:
         confirm_password: Confirm password
         current_password: Password as it is now
         data: Data
-        display_name: Display alias
+        display_name: Alias
         email: Mail
+        expires_in: Good until
+        filtered_languages: Limit localizations
         header: Background photo
         locale: Localization
         locked: Lock account
+        max_uses: Max accounts
         new_password: Modify password
         note: Bio
         otp_attempt: Two-factor digits
         password: Password
+        setting_auto_play_gif: Auto-play animation GIFs
+        setting_boost_modal: Show confirmation dialog prior to boosting
         setting_default_privacy: Post privacy
+        setting_default_sensitive: Always mark photos as tricky
+        setting_delete_modal: Show confirmation dialog prior to discarding a toot
+        setting_noindex: Opt-out of inquiry visibility
+        setting_reduce_motion: Slow motion in animations
+        setting_system_font_ui: Using your app's font
+        setting_theme: Instantiation stylization
+        setting_unfollow_modal: Show confirmation dialog prior to unfollowing anybody
         severity: Severity
         type: Import format
         username: Alias
-        setting_boost_modal: Show confirmation dialog before boosting
+        setting_boost_modal: Show confirmation dialog prior to boosting
       interactions:
         must_be_follower: Block notifications from accounts that don't follow you
         must_be_following: Block notifications from accounts you don't follow
+        must_be_following_dm: Block DMs from accounts you don't follow
       notification_emails:
         digest: Post summary mails
         favourite: Post mail if an account stars your status

@@ -17,11 +17,32 @@ en:
       unconfirmed: Confirm your mail location to go on.
     mailer:
       confirmation_instructions:
+        action: Confirm mail location
+        explanation: You got an account on %{host} with this mail. Just click to finish activation. If this wasn't you, do nothing and no account will start.
+        extra_html: Also look at <a href="%{terms_path}">our social contract</a> and <a href="%{policy_path}">our Privacy Policy</a>.
         subject: 'Mastodon: Confirmation instructions for %{instance}'
+        title: Verify email address
+      email_changed:
+        explanation: 'The email address for your account is being changed to:'
+        extra: If you did not change your email, it is likely that someone has gained access to your account. Please change your password immediately or contact the instance admin if you're locked out of your account.
+        subject: 'Mastodon: Mail modification took'
+        title: New email address
       password_change:
+        explanation: The password for your account has been changed.
+        extra: If you did not change your password, it is likely that someone has gained access to your account. Please change your password immediately or contact the instance admin if you're locked out of your account.
         subject: 'Mastodon: Password modification'
+        title: Password changed
+      reconfirmation_instructions:
+        explanation: Confirm the new address to change your email.
+        extra: If this change wasn't initiated by you, please ignore this email. The email address for the Mastodon account won't change until you access the link above.
+        subject: 'Mastodon: Confirm email for %{instance}'
+        title: Verify email address
       reset_password_instructions:
+        action: Change password
+        explanation: You requested a new password for your account.
+        extra: If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one.
         subject: 'Mastodon: Modify password instructions'
+        title: Password reset
       unlock_instructions:
         subject: 'Mastodon: Unlock instructions'
     omniauth_callbacks:
@@ -32,14 +53,14 @@ en:
       send_instructions: You will find a mail with instructions on how to modify your password in a jiffy.
       send_paranoid_instructions: If your mail location is known to us, you will find a password modification link at your mail locaton in a jiffy.
       updated: Your password modification took and you got through login.
-      updated_not_active: Your password modification took.
+      updated_not_active: Your password has been changed successfully.
     registrations:
       destroyed: Your account is now not part of our instantiation. Miss you!
       signed_up: Hi! Your signup looks good.
       signed_up_but_inactive: Your signup looks good, but you could not sign in as you must do your account activation.
       signed_up_but_locked: Your signup looks good, but you could not sign in as your account has a lock on it.
       signed_up_but_unconfirmed: A confirmation link is in you mailbox. Follow that link for your account activation.
-      update_needs_confirmation: Account modifications look good, but you must confirm your mail location. Look at your mailbox and follow that confirmation link to confirm your mail.
+      updated_needs_confirmation: Account modifications look good, but you must confirm your mail location. Look at your mailbox and follow that confirmation link to confirm your mail.
       updated: Your account modifications look good.
     sessions:
       already_signed_out: Your account sign out took.

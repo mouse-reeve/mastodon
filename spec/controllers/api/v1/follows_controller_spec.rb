@@ -3,8 +3,13 @@ require 'rails_helper'
 RSpec.describe Api::V1::FollowsController, type: :controller do
   render_views
 
+<<<<<<< HEAD
   let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
   let(:token) { double acceptable?: true, resource_owner_id: user.id }
+=======
+  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
+  let(:token) { Fabricate(:accessible_access_token, resource_owner_id: user.id, scopes: 'follow') }
+>>>>>>> master
 
   before do
     allow(controller).to receive(:doorkeeper_token) { token }
@@ -41,6 +46,11 @@ RSpec.describe Api::V1::FollowsController, type: :controller do
 
     it 'subscribes to remote hub' do
       expect(a_request(:post, "https://quitter.no/main/push/hub")).to have_been_made
+    end
+
+    it 'returns http success if already following, too' do
+      post :create, params: { uri: 'gargron@quitter.no' }
+      expect(response).to have_http_status(:success)
     end
   end
 end

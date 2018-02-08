@@ -3,12 +3,46 @@ require 'rails_helper'
 RSpec.describe Api::V1::NotificationsController, type: :controller do
   render_views
 
+<<<<<<< HEAD
   let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'mus')) }
   let(:token) { double acceptable?: true, resource_owner_id: user.id }
+=======
+  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
+  let(:token) { Fabricate(:accessible_access_token, resource_owner_id: user.id, scopes: 'read') }
+>>>>>>> master
   let(:other) { Fabricate(:user, account: Fabricate(:account, username: 'bob')) }
 
   before do
     allow(controller).to receive(:doorkeeper_token) { token }
+  end
+
+  describe 'GET #show' do
+    it 'returns http success' do
+      notification = Fabricate(:notification, account: user.account)
+      get :show, params: { id: notification.id }
+
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #dismiss' do
+    it 'destroys the notification' do
+      notification = Fabricate(:notification, account: user.account)
+      post :dismiss, params: { id: notification.id }
+
+      expect(response).to have_http_status(:success)
+      expect { notification.reload }.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
+
+  describe 'POST #clear' do
+    it 'clears notifications for the account' do
+      notification = Fabricate(:notification, account: user.account)
+      post :clear
+
+      expect(notification.account.reload.notifications).to be_empty
+      expect(response).to have_http_status(:success)
+    end
   end
 
   describe 'GET #index' do
