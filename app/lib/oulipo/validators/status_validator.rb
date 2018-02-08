@@ -15,13 +15,13 @@ module Oulipo
 
     def validate_text(field, status)
       text = status.send(field)
-      if toot_text(text).match?(FIFTH_GLYPH_REGEX)
+      if toot_text(text).match?(/[eèéêëēėęǝɛ]/i)
         status.errors.add(field, 'contains invalid symbol')
       end
     end
 
     def toot_text(text)
-      [URL_REGEX, MENTION_REGEX, EMOJI_REGEX].each do |regex|
+      [/http.?:\/\/[^\s\\]+/, /@[^\s\\]+@[^\s\\]+\.[a-z]+/, /\B:[a-zA-Z\d_]+:\B/].each do |regex|
         text = strip_matches(text, regex)
       end
       return text
